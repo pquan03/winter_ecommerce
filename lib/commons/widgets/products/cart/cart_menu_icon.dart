@@ -4,11 +4,9 @@ import 'package:iconsax/iconsax.dart';
 class CartCounterIcon extends StatelessWidget {
   const CartCounterIcon({
     super.key,
-    required this.color,
     required this.onPressed,
   });
 
-  final Color color;
   final VoidCallback onPressed;
 
   @override
@@ -19,7 +17,6 @@ class CartCounterIcon extends StatelessWidget {
           onPressed: () {},
           icon: Icon(
             Iconsax.shopping_bag,
-            color: Colors.white,
           ),
         ),
         Positioned(

@@ -12,7 +12,7 @@ class RoundedContainer extends StatelessWidget {
       this.padding,
       this.showBorder = false,
       this.radius = TSizes.cardRadiusLg,
-      this.backgroundColor = TColors.white,
+      this.backgroundColor,
       this.borderColor = TColors.borderPrimary});
 
   final double? width, height;
@@ -20,7 +20,7 @@ class RoundedContainer extends StatelessWidget {
   final Widget? child;
   final bool showBorder;
   final Color borderColor;
-  final Color backgroundColor;
+  final Color? backgroundColor;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
 
