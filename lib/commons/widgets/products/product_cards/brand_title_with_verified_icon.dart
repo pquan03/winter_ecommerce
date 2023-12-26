@@ -11,13 +11,15 @@ class BrandTitleWithVerifiedIcon extends StatelessWidget {
       this.color,
       this.maxLines = 1,
       this.textAlign = TextAlign.center,
-      this.brandTextSize = TextSizes.small});
+      this.brandTextSize = TextSizes.small,
+      this.iconSize});
 
   final String title;
   final Color? color;
   final int maxLines;
   final TextAlign? textAlign;
   final TextSizes brandTextSize;
+  final double? iconSize;
 
   @override
   Widget build(BuildContext context) {
@@ -32,10 +34,10 @@ class BrandTitleWithVerifiedIcon extends StatelessWidget {
         const SizedBox(
           width: TSizes.xs,
         ),
-        const Icon(
+        Icon(
           Iconsax.verify5,
           color: TColors.primary,
-          size: TSizes.iconXs,
+          size: iconSize ?? TSizes.iconSm,
         )
       ],
     );
