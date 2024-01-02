@@ -19,7 +19,7 @@ class ProductAttributes extends StatelessWidget {
         // Selected attribute pricing and description
         RoundedContainer(
           padding: const EdgeInsets.all(TSizes.md),
-          backgroundColor: dark ? TColors.darkGrey : TColors.grey,
+          backgroundColor: dark ? TColors.darkerGrey : TColors.grey,
           child: Column(
             children: [
               // Title, Price and Stock status
@@ -95,8 +95,13 @@ class ProductAttributes extends StatelessWidget {
             ],
           ),
         ),
+        const SizedBox(
+          height: TSizes.spaceBtwItems,
+        ),
         // Attributes
+        // Colors
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SectionHeading(
               title: 'Colors',
@@ -105,9 +110,55 @@ class ProductAttributes extends StatelessWidget {
             const SizedBox(
               height: TSizes.spaceBtwItems / 2,
             ),
-            WChoiceChip(text: 'Green', selected: true),
-            WChoiceChip(text: 'Blue', selected: false),
-            WChoiceChip(text: 'Yellow', selected: false),
+            Wrap(
+              spacing: 8,
+              children: [
+                WChoiceChip(
+                  text: 'Green',
+                  selected: true,
+                  onSelected: (valie) {},
+                ),
+                WChoiceChip(
+                  text: 'Blue',
+                  selected: false,
+                  onSelected: (value) {},
+                ),
+                WChoiceChip(
+                  text: 'Yellow',
+                  selected: false,
+                  onSelected: (value) {},
+                ),
+              ],
+            ),
+          ],
+        ),
+        const SizedBox(
+          height: TSizes.spaceBtwItems,
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SectionHeading(
+              title: 'Size',
+              showActionButton: false,
+            ),
+            const SizedBox(
+              height: TSizes.spaceBtwItems / 2,
+            ),
+            Wrap(
+              spacing: 8,
+              children: [
+                WChoiceChip(
+                  text: 'EU 34',
+                  selected: true,
+                  onSelected: (value) {},
+                ),
+                WChoiceChip(
+                    text: 'EU 36', selected: false, onSelected: (value) {}),
+                WChoiceChip(
+                    text: 'EU 38', selected: false, onSelected: (value) {}),
+              ],
+            ),
           ],
         )
       ],
