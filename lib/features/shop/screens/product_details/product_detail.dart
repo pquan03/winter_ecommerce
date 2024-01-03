@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:t_store/commons/widgets/texts/section_heading.dart';
@@ -7,6 +8,7 @@ import 'package:t_store/features/shop/screens/product_details/widgets/product_at
 import 'package:t_store/features/shop/screens/product_details/widgets/product_image_slider.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/product_meta_data.dart';
 import 'package:t_store/features/shop/screens/product_details/widgets/rating_and_share.dart';
+import 'package:t_store/features/shop/screens/product_reviews/product_reviews.dart';
 import 'package:t_store/utils/constants/sizes.dart';
 
 class ProductDetailScreen extends StatelessWidget {
@@ -76,20 +78,26 @@ class ProductDetailScreen extends StatelessWidget {
                   const SizedBox(
                     height: TSizes.spaceBtwItems,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      const SectionHeading(
-                        title: "Review(199)",
-                        showActionButton: false,
+                  GestureDetector(
+                    onTap: () => Get.to(() => const ProductReviewsScreen()),
+                    child: Container(
+                      color: Colors.transparent,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const SectionHeading(
+                            title: "Review(199)",
+                            showActionButton: false,
+                          ),
+                          IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Iconsax.arrow_right_3,
+                                size: 18,
+                              ))
+                        ],
                       ),
-                      IconButton(
-                          onPressed: () {},
-                          icon: Icon(
-                            Iconsax.arrow_right_3,
-                            size: 18,
-                          ))
-                    ],
+                    ),
                   ),
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
