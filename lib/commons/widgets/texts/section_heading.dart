@@ -30,7 +30,7 @@ class SectionHeading extends StatelessWidget {
           overflow: TextOverflow.ellipsis,
         ),
         if (showActionButton)
-          TextButton(onPressed: () {}, child: const Text("See All"))
+          TextButton(onPressed: () {}, child: Text(buttonTitle))
       ],
     );
   }
