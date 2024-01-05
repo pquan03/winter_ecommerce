@@ -6,6 +6,7 @@ import 'package:t_store/commons/widgets/custom_shapes/containers/rounded_contain
 import 'package:t_store/commons/widgets/custom_shapes/icons/circular_icon.dart';
 import 'package:t_store/commons/widgets/images/rounded_image.dart';
 import 'package:t_store/commons/widgets/products/cart/add_card_button.dart';
+import 'package:t_store/commons/widgets/products/product_cards/brand_title_with_verified_icon.dart';
 import 'package:t_store/commons/widgets/products/text/product_title_text.dart';
 import 'package:t_store/commons/widgets/texts/product_price_text.dart';
 import 'package:t_store/features/shop/screens/product_details/product_detail.dart';
@@ -88,24 +89,7 @@ class ProductCardVertical extends StatelessWidget {
                     height: TSizes.xs,
                   ),
                   // Brand
-                  Row(
-                    children: [
-                      Text(
-                        "Nike",
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      const SizedBox(
-                        width: TSizes.xs,
-                      ),
-                      const Icon(
-                        Iconsax.verify5,
-                        color: TColors.primary,
-                        size: TSizes.iconXs,
-                      )
-                    ],
-                  ),
+                  BrandTitleWithVerifiedIcon(title: 'Nike')
                 ],
               ),
             ),

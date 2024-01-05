@@ -25,6 +25,8 @@ class BrandCard extends StatelessWidget {
           children: [
             Flexible(
               child: RoundedImage(
+                width: 80,
+                height: 80,
                 isNetworkImage: false,
                 imageUrl: TImages.clothIcon,
                 backgroundColor: Colors.transparent,
