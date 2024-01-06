@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/commons/widgets/texts/section_heading.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+import 'package:winter_store/commons/widgets/texts/section_heading.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
 
 class WShippingAddressSection extends StatelessWidget {
   const WShippingAddressSection({

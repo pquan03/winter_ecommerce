@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:readmore/readmore.dart';
-import 'package:t_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:t_store/features/shop/screens/product_reviews/widgets/rating_bar_indicator.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
+import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:winter_store/features/shop/screens/product_reviews/widgets/rating_bar_indicator.dart';
+import 'package:winter_store/utils/constants/colors.dart';
+import 'package:winter_store/utils/constants/image_strings.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
+import 'package:winter_store/utils/helpers/helper_functions.dart';
 
 class UserReviewCard extends StatelessWidget {
   const UserReviewCard({

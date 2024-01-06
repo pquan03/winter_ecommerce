@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/commons/widgets/custom_shapes/curved_edges/curved_edges.dart';
+import 'package:winter_store/commons/widgets/custom_shapes/curved_edges/curved_edges.dart';
 
 class CustomCurvedEdges extends StatelessWidget {
   const CustomCurvedEdges({
@@ -17,5 +17,3 @@ class CustomCurvedEdges extends StatelessWidget {
     );
   }
 }
-
-

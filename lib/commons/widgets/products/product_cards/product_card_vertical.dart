@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/commons/styles/shadows.dart';
-import 'package:t_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:t_store/commons/widgets/custom_shapes/icons/circular_icon.dart';
-import 'package:t_store/commons/widgets/images/rounded_image.dart';
-import 'package:t_store/commons/widgets/products/cart/add_card_button.dart';
-import 'package:t_store/commons/widgets/products/product_cards/brand_title_with_verified_icon.dart';
-import 'package:t_store/commons/widgets/products/text/product_title_text.dart';
-import 'package:t_store/commons/widgets/texts/product_price_text.dart';
-import 'package:t_store/features/shop/screens/product_details/product_detail.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
+import 'package:winter_store/commons/styles/shadows.dart';
+import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:winter_store/commons/widgets/custom_shapes/icons/circular_icon.dart';
+import 'package:winter_store/commons/widgets/images/rounded_image.dart';
+import 'package:winter_store/commons/widgets/products/cart/add_card_button.dart';
+import 'package:winter_store/commons/widgets/products/product_cards/brand_title_with_verified_icon.dart';
+import 'package:winter_store/commons/widgets/products/text/product_title_text.dart';
+import 'package:winter_store/commons/widgets/texts/product_price_text.dart';
+import 'package:winter_store/features/shop/screens/product_details/product_detail.dart';
+import 'package:winter_store/utils/constants/colors.dart';
+import 'package:winter_store/utils/constants/image_strings.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
+import 'package:winter_store/utils/helpers/helper_functions.dart';
 
 class ProductCardVertical extends StatelessWidget {
   const ProductCardVertical({super.key});

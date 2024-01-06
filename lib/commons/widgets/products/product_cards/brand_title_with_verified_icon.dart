@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/enums.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+import 'package:winter_store/utils/constants/colors.dart';
+import 'package:winter_store/utils/constants/enums.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
 
 class BrandTitleWithVerifiedIcon extends StatelessWidget {
   const BrandTitleWithVerifiedIcon(

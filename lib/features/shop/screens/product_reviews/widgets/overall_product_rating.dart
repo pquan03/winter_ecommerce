@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
+import 'package:winter_store/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
 
 class WOverallProductRating extends StatelessWidget {
   const WOverallProductRating({
@@ -48,4 +48,3 @@ class WOverallProductRating extends StatelessWidget {
     );
   }
 }
-

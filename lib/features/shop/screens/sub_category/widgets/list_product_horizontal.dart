@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_store/commons/widgets/products/product_cards/product_card_horizontal.dart';
-import 'package:t_store/commons/widgets/texts/section_heading.dart';
-import 'package:t_store/features/shop/screens/all_products/all_products.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+import 'package:winter_store/commons/widgets/products/product_cards/product_card_horizontal.dart';
+import 'package:winter_store/commons/widgets/texts/section_heading.dart';
+import 'package:winter_store/features/shop/screens/all_products/all_products.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
 
 class SubCategorySection extends StatelessWidget {
   const SubCategorySection({super.key, required this.title});

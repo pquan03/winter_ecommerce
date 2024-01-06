@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "450727470597",
+    "project_id": "ecommerceapp-e301c",
+    "storage_bucket": "ecommerceapp-e301c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450727470597:android:4de666faa99ef282285e6c",
+        "android_client_info": {
+          "package_name": "com.example.t_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450727470597-lcihgo2jk50bvtpfg8e7jebbm9t2niq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsuoLR_gZ28tDLsOSsX6iCq0EPTaejy9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450727470597-lcihgo2jk50bvtpfg8e7jebbm9t2niq6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "450727470597-vh109593s44suigl6uoguq9ktl7hk6n1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tStore"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450727470597:android:7937e8fbe8c2aa23285e6c",
+        "android_client_info": {
+          "package_name": "com.example.winter_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450727470597-lcihgo2jk50bvtpfg8e7jebbm9t2niq6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAsuoLR_gZ28tDLsOSsX6iCq0EPTaejy9c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450727470597-lcihgo2jk50bvtpfg8e7jebbm9t2niq6.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "450727470597-vh109593s44suigl6uoguq9ktl7hk6n1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tStore"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

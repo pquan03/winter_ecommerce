@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/commons/widgets/appbar/appbar.dart';
-import 'package:t_store/commons/widgets/custom_shapes/containers/primary_header_container.dart';
-import 'package:t_store/commons/widgets/list_tile/setting_menu_tile.dart';
-import 'package:t_store/commons/widgets/list_tile/user_profile_tile.dart';
-import 'package:t_store/commons/widgets/texts/section_heading.dart';
-import 'package:t_store/features/personalization/screens/address/address.dart';
-import 'package:t_store/features/personalization/screens/orders/orders.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+import 'package:winter_store/commons/widgets/appbar/appbar.dart';
+import 'package:winter_store/commons/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:winter_store/commons/widgets/list_tile/setting_menu_tile.dart';
+import 'package:winter_store/commons/widgets/list_tile/user_profile_tile.dart';
+import 'package:winter_store/commons/widgets/texts/section_heading.dart';
+import 'package:winter_store/features/personalization/screens/address/address.dart';
+import 'package:winter_store/features/personalization/screens/orders/orders.dart';
+import 'package:winter_store/utils/constants/colors.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
 
 class SettingScreen extends StatelessWidget {
   const SettingScreen({super.key});

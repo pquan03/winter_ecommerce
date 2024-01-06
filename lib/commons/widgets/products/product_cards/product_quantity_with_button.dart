@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/commons/widgets/custom_shapes/icons/circular_icon.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
+import 'package:winter_store/commons/widgets/custom_shapes/icons/circular_icon.dart';
+import 'package:winter_store/utils/constants/colors.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
+import 'package:winter_store/utils/helpers/helper_functions.dart';
 
 class WProductQuantityWithAddRemoveButton extends StatelessWidget {
   const WProductQuantityWithAddRemoveButton({

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_store/features/authentication/controllers/onboarding/onboarding_controller.dart';
-import 'package:t_store/features/authentication/screens/onboarding/widget/onboarding_dot_navigation.dart';
-import 'package:t_store/features/authentication/screens/onboarding/widget/onboarding_next_button.dart';
-import 'package:t_store/features/authentication/screens/onboarding/widget/onboarding_page.dart';
-import 'package:t_store/features/authentication/screens/onboarding/widget/onboarding_skip_btn.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/text_strings.dart';
+import 'package:winter_store/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:winter_store/features/authentication/screens/onboarding/widget/onboarding_dot_navigation.dart';
+import 'package:winter_store/features/authentication/screens/onboarding/widget/onboarding_next_button.dart';
+import 'package:winter_store/features/authentication/screens/onboarding/widget/onboarding_page.dart';
+import 'package:winter_store/features/authentication/screens/onboarding/widget/onboarding_skip_btn.dart';
+import 'package:winter_store/utils/constants/image_strings.dart';
+import 'package:winter_store/utils/constants/text_strings.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});

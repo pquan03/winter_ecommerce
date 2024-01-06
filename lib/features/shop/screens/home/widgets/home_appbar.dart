@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_store/commons/widgets/appbar/appbar.dart';
-import 'package:t_store/commons/widgets/products/cart/cart_menu_icon.dart';
-import 'package:t_store/features/shop/screens/cart/cart.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/text_strings.dart';
+import 'package:winter_store/commons/widgets/appbar/appbar.dart';
+import 'package:winter_store/commons/widgets/products/cart/cart_menu_icon.dart';
+import 'package:winter_store/features/shop/screens/cart/cart.dart';
+import 'package:winter_store/utils/constants/colors.dart';
+import 'package:winter_store/utils/constants/text_strings.dart';
 
 class HomeAppBar extends StatelessWidget {
   const HomeAppBar({

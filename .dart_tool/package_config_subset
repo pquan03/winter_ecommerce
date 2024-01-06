@@ -62,6 +62,18 @@ ffi
 3.0
 file:///Users/winter/.pub-cache/hosted/pub.dev/ffi-2.1.0/
 file:///Users/winter/.pub-cache/hosted/pub.dev/ffi-2.1.0/lib/
+firebase_core
+2.18
+file:///Users/winter/.pub-cache/hosted/pub.dev/firebase_core-2.24.2/
+file:///Users/winter/.pub-cache/hosted/pub.dev/firebase_core-2.24.2/lib/
+firebase_core_platform_interface
+2.18
+file:///Users/winter/.pub-cache/hosted/pub.dev/firebase_core_platform_interface-5.0.0/
+file:///Users/winter/.pub-cache/hosted/pub.dev/firebase_core_platform_interface-5.0.0/lib/
+firebase_core_web
+2.18
+file:///Users/winter/.pub-cache/hosted/pub.dev/firebase_core_web-2.10.0/
+file:///Users/winter/.pub-cache/hosted/pub.dev/firebase_core_web-2.10.0/lib/
 flutter_lints
 2.19
 file:///Users/winter/.pub-cache/hosted/pub.dev/flutter_lints-2.0.3/
@@ -286,7 +298,7 @@ flutter_web_plugins
 3.2
 file:///Users/winter/Documents/flutter/packages/flutter_web_plugins/
 file:///Users/winter/Documents/flutter/packages/flutter_web_plugins/lib/
-t_store
+winter_store
 3.0
 file:///Users/winter/Documents/flutter_ecommerce_app/
 file:///Users/winter/Documents/flutter_ecommerce_app/lib/

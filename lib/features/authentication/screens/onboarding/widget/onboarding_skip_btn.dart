@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/features/authentication/controllers/onboarding/onboarding_controller.dart';
-import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/device/device_utility.dart';
+import 'package:winter_store/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
+import 'package:winter_store/utils/device/device_utility.dart';
 
 class OnBoardingSkipBTN extends StatelessWidget {
   const OnBoardingSkipBTN({super.key});

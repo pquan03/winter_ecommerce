@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
 
 class RoundedImage extends StatelessWidget {
   const RoundedImage({

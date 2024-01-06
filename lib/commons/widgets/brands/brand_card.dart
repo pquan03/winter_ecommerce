@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:t_store/commons/widgets/images/rounded_image.dart';
-import 'package:t_store/commons/widgets/products/product_cards/brand_title_with_verified_icon.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/enums.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
+import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:winter_store/commons/widgets/images/rounded_image.dart';
+import 'package:winter_store/commons/widgets/products/product_cards/brand_title_with_verified_icon.dart';
+import 'package:winter_store/utils/constants/colors.dart';
+import 'package:winter_store/utils/constants/enums.dart';
+import 'package:winter_store/utils/constants/image_strings.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
+import 'package:winter_store/utils/helpers/helper_functions.dart';
 
 class BrandCard extends StatelessWidget {
   const BrandCard({super.key, this.showBorder = true});

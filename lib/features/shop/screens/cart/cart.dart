@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_store/commons/widgets/appbar/appbar.dart';
-import 'package:t_store/commons/widgets/products/cart/cart_item.dart';
-import 'package:t_store/commons/widgets/products/product_cards/product_quantity_with_button.dart';
-import 'package:t_store/commons/widgets/texts/product_price_text.dart';
-import 'package:t_store/features/shop/screens/check_out/check_out.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+import 'package:winter_store/commons/widgets/appbar/appbar.dart';
+import 'package:winter_store/commons/widgets/products/cart/cart_item.dart';
+import 'package:winter_store/commons/widgets/products/product_cards/product_quantity_with_button.dart';
+import 'package:winter_store/commons/widgets/texts/product_price_text.dart';
+import 'package:winter_store/features/shop/screens/check_out/check_out.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});

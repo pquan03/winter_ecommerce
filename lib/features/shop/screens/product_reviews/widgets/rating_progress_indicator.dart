@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/device/device_utility.dart';
+import 'package:winter_store/utils/constants/colors.dart';
+import 'package:winter_store/utils/device/device_utility.dart';
 
 class RatingProgessIndicator extends StatelessWidget {
   const RatingProgessIndicator(

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:t_store/commons/widgets/appbar/appbar.dart';
-import 'package:t_store/features/personalization/screens/address/add_new_address.dart';
-import 'package:t_store/features/personalization/screens/address/widgets/single_adress.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+import 'package:winter_store/commons/widgets/appbar/appbar.dart';
+import 'package:winter_store/features/personalization/screens/address/add_new_address.dart';
+import 'package:winter_store/features/personalization/screens/address/widgets/single_adress.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
 
 class AddressesScreen extends StatelessWidget {
   const AddressesScreen({super.key});

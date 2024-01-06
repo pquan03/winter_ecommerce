@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:t_store/commons/widgets/appbar/appbar.dart';
-import 'package:t_store/commons/widgets/images/rounded_image.dart';
-import 'package:t_store/features/shop/screens/sub_category/widgets/list_product_horizontal.dart';
-import 'package:t_store/utils/constants/image_strings.dart';
-import 'package:t_store/utils/constants/sizes.dart';
+import 'package:winter_store/commons/widgets/appbar/appbar.dart';
+import 'package:winter_store/commons/widgets/images/rounded_image.dart';
+import 'package:winter_store/features/shop/screens/sub_category/widgets/list_product_horizontal.dart';
+import 'package:winter_store/utils/constants/image_strings.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
 
 class SubCategoryScreen extends StatelessWidget {
   const SubCategoryScreen({super.key});

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:t_store/commons/widgets/appbar/appbar.dart';
-import 'package:t_store/commons/widgets/appbar/tabbar.dart';
-import 'package:t_store/commons/widgets/custom_shapes/containers/search_container.dart';
-import 'package:t_store/commons/widgets/layouts/grid_layout.dart';
-import 'package:t_store/commons/widgets/products/cart/cart_menu_icon.dart';
-import 'package:t_store/commons/widgets/texts/section_heading.dart';
-import 'package:t_store/commons/widgets/brands/brand_card.dart';
-import 'package:t_store/features/shop/screens/all_brands/all_brands.dart';
-import 'package:t_store/features/shop/screens/store/widgets/category_tab.dart';
-import 'package:t_store/utils/constants/colors.dart';
-import 'package:t_store/utils/constants/sizes.dart';
-import 'package:t_store/utils/helpers/helper_functions.dart';
+import 'package:winter_store/commons/widgets/appbar/appbar.dart';
+import 'package:winter_store/commons/widgets/appbar/tabbar.dart';
+import 'package:winter_store/commons/widgets/custom_shapes/containers/search_container.dart';
+import 'package:winter_store/commons/widgets/layouts/grid_layout.dart';
+import 'package:winter_store/commons/widgets/products/cart/cart_menu_icon.dart';
+import 'package:winter_store/commons/widgets/texts/section_heading.dart';
+import 'package:winter_store/commons/widgets/brands/brand_card.dart';
+import 'package:winter_store/features/shop/screens/all_brands/all_brands.dart';
+import 'package:winter_store/features/shop/screens/store/widgets/category_tab.dart';
+import 'package:winter_store/utils/constants/colors.dart';
+import 'package:winter_store/utils/constants/sizes.dart';
+import 'package:winter_store/utils/helpers/helper_functions.dart';
 
 class StoreScreen extends StatelessWidget {
   const StoreScreen({super.key});

@@ -98,6 +98,24 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "firebase_core",
+      "rootUri": "file:///Users/winter/.pub-cache/hosted/pub.dev/firebase_core-2.24.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_core_platform_interface",
+      "rootUri": "file:///Users/winter/.pub-cache/hosted/pub.dev/firebase_core_platform_interface-5.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
+      "name": "firebase_core_web",
+      "rootUri": "file:///Users/winter/.pub-cache/hosted/pub.dev/firebase_core_web-2.10.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///Users/winter/Documents/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -434,13 +452,13 @@
       "languageVersion": "2.19"
     },
     {
-      "name": "t_store",
+      "name": "winter_store",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2024-01-03T05:47:32.495830Z",
+  "generated": "2024-01-06T04:21:37.083463Z",
   "generator": "pub",
   "generatorVersion": "3.2.3"
 }

@@ -1,6 +1,6 @@
 {
-    "name": "t_store",
-    "short_name": "t_store",
+    "name": "winter_store",
+    "short_name": "winter_store",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
