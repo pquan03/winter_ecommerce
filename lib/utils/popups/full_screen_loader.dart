@@ -8,8 +8,8 @@ class WFullScreenLoader {
     showDialog(
         context: Get.overlayContext!,
         barrierDismissible: false,
-        builder: (_) => PopScope(
-              canPop: false,
+        builder: (_) => WillPopScope(
+              onWillPop: () async => false,
               child: Container(
                 color: THelperFunctions.isDarkMode(Get.context!)
                     ? TColors.dark
@@ -25,5 +25,9 @@ class WFullScreenLoader {
                 ),
               ),
             ));
+  }
+
+  static stopLoading() {
+    Navigator.of(Get.overlayContext!).pop();
   }
 }

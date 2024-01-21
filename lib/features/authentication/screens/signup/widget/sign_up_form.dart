@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:winter_store/features/authentication/controllers/signup/signup_controller.dart';
-import 'package:winter_store/features/authentication/screens/signup/verify_email.dart';
 import 'package:winter_store/features/authentication/screens/signup/widget/term_conditions_checkbox.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 import 'package:winter_store/utils/constants/text_strings.dart';
@@ -88,14 +87,21 @@ class SignUpForm extends StatelessWidget {
             const SizedBox(
               height: TSizes.spaceBtwInputFields,
             ),
-            TextFormField(
-              controller: controller.password,
-              validator: (value) => TValidator.validatePassword(value),
-              obscureText: true,
-              decoration: const InputDecoration(
-                  labelText: TTexts.password,
-                  prefixIcon: Icon(Iconsax.password_check),
-                  suffixIcon: Icon(Iconsax.eye_slash)),
+            Obx(
+              () => TextFormField(
+                controller: controller.password,
+                validator: (value) => TValidator.validatePassword(value),
+                obscureText: controller.hidePassword.value,
+                decoration: InputDecoration(
+                    labelText: TTexts.password,
+                    prefixIcon: Icon(Iconsax.password_check),
+                    suffixIcon: IconButton(
+                        onPressed: () => controller.hidePassword.value =
+                            !controller.hidePassword.value,
+                        icon: Icon(controller.hidePassword.value == true
+                            ? Iconsax.eye_slash
+                            : Iconsax.eye))),
+              ),
             ),
             const SizedBox(
               height: TSizes.spaceBtwSections,
@@ -109,7 +115,7 @@ class SignUpForm extends StatelessWidget {
             SizedBox(
                 width: double.infinity,
                 child: ElevatedButton(
-                    onPressed: () => controller.signup() ,
+                    onPressed: () => controller.signup(),
                     child: const Text(TTexts.createAccount)))
           ],
         ));

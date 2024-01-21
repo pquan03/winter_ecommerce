@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:winter_store/commons/widgets/appbar/appbar.dart';
 import 'package:winter_store/commons/widgets/login_signup/form_diver.dart';
 import 'package:winter_store/commons/widgets/login_signup/social_button.dart';
 import 'package:winter_store/features/authentication/screens/signup/widget/sign_up_form.dart';
@@ -11,7 +12,9 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: WAppBar(
+        showBackArrow: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(TSizes.defaultSpace),
