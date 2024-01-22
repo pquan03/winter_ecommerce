@@ -1,6 +1,9 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
-import 'package:winter_store/data/repositories/authentication_repository.dart';
+import 'package:winter_store/data/repositories/authentication/authentication_repository.dart';
+import 'package:winter_store/data/repositories/user/user_repository.dart';
+import 'package:winter_store/features/authentication/screens/signup/verify_email.dart';
+import 'package:winter_store/features/personalization/models/user_model.dart';
 import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/helpers/network_manager.dart';
 import 'package:winter_store/utils/loaders/loaders.dart';
@@ -21,7 +24,6 @@ class SignupController extends GetxController {
   GlobalKey<FormState> signupFormkey = GlobalKey<FormState>();
   // Signup
   void signup() async {
-    print("Sign up");
     try {
       // Start loading
       WFullScreenLoader.openLoadingDialog(
@@ -48,7 +50,29 @@ class SignupController extends GetxController {
       final user = await AuthenticationRepository.instance
           .registerWithEmailAdPassword(email.text, password.text);
       //  Saved Authenticated user data in Firebase
-      // final newUser =
+      final newUser = UserModel(
+        id: user.user!.uid,
+        firstName: firstName.text.trim(),
+        lastName: lastName.text.trim(),
+        username: username.text.trim(),
+        email: email.text.trim(),
+        phoneNumber: phoneNumber.text.trim(),
+        profilePicture: '',
+      );
+
+      final userRepository = Get.put(UserRepository());
+      await userRepository.saveUserRecord(newUser);
+
+      // Show Success Message
+      WLoader.successSnackBar(
+          title: 'Success',
+          message:
+              'Your account has been created! verify your email address to login');
+
+      // Move to Verify Email Screen
+      Get.to(VerifyEmailScreen(
+        email: email.text.trim(),
+      ));
     } catch (e) {
       WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
     } finally {

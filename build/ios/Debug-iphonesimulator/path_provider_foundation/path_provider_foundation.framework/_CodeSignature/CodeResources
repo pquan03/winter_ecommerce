@@ -14,7 +14,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7Q3+hIX8RFMkuNG+Rm7ZPng4LpM=
+		a/V/lA2OTQSB9YIgDoK3FGrH5k8=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -22,11 +22,11 @@
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/arm64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		sHV2BOM4drAQIJR99bSd9Wji4rM=
+		cMF9jgkk5nXyIevc1Xp4rU90aXI=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		CJSih1Ra6LZl1sz0UpOCFfzpi/w=
+		Pfr+ORZdiwdr3gxt+2CAMzcVC8I=
 		</data>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -51,6 +51,14 @@
 		<key>Modules/path_provider_foundation.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
 		hVPiBL1CpBAfW2iUiPto/7zrXTE=
+		</data>
+		<key>path_provider_foundation_privacy.bundle/Info.plist</key>
+		<data>
+		NMMTW9i+HEjOtkzD/0y+5A+fVXk=
+		</data>
+		<key>path_provider_foundation_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		/LX0ZlwxwIAIhjZaDB8EiH5KpXA=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -80,14 +88,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VWuL5eoVobzw/pVZSoyE7B1hn5cJ14NE6kNcJI506wM=
+			khOiXyoyjBuYLSZFRJvznFCxTcTglWMvboqHcScohYU=
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6JVq6darpec1ie6s50IXiVU0RMZf99QUZXwr/UfLPP0=
+			W0iz3MSTXGZ1N2YeWl97rN6CwihrgCAdbLnlaN/iuVQ=
 			</data>
 		</dict>
 		<key>Modules/path_provider_foundation.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -130,6 +138,20 @@
 			<key>hash2</key>
 			<data>
 			b0DnnwoXLiJdrOt/XId+xE5QP8JkPYpHIawHbB+Mx+o=
+			</data>
+		</dict>
+		<key>path_provider_foundation_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+MYggOFZXkLrjevFh/jr1QtaARkfcZyaG4vrKkWJ8sA=
+			</data>
+		</dict>
+		<key>path_provider_foundation_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bS2g2NkwIn1CjB2TY7CtbjoS4sm2jFzilxWKdBL8jDE=
 			</data>
 		</dict>
 	</dict>

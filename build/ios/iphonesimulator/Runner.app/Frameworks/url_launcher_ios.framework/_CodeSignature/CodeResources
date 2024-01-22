@@ -6,11 +6,34 @@
 	<dict>
 		<key>Info.plist</key>
 		<data>
-		XxwLQTn6/9Vp0ChuclSEqBk+rUs=
+		oF/E1l8OKrijGxkLK3VEoXSC77I=
+		</data>
+		<key>url_launcher_ios_privacy.bundle/Info.plist</key>
+		<data>
+		bVOtBL3zR8NvwtQ+qM6fhL8p+Vc=
+		</data>
+		<key>url_launcher_ios_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<data>
+		/LX0ZlwxwIAIhjZaDB8EiH5KpXA=
 		</data>
 	</dict>
 	<key>files2</key>
-	<dict/>
+	<dict>
+		<key>url_launcher_ios_privacy.bundle/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			HG/yTNPppeKOyp8FJH/VbO6wCfd0jECgAIztf44EHGk=
+			</data>
+		</dict>
+		<key>url_launcher_ios_privacy.bundle/PrivacyInfo.xcprivacy</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bS2g2NkwIn1CjB2TY7CtbjoS4sm2jFzilxWKdBL8jDE=
+			</data>
+		</dict>
+	</dict>
 	<key>rules</key>
 	<dict>
 		<key>^.*</key>
