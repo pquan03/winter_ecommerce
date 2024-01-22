@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:winter_store/features/authentication/controllers/login/login_controller.dart';
 import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 
@@ -9,6 +11,7 @@ class SocialButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LoginController());
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -18,7 +21,7 @@ class SocialButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(100),
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () => controller.googleSignIn(),
             icon: const Image(
               image: AssetImage(TImages.google),
               width: 24,

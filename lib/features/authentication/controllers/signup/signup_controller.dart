@@ -27,7 +27,7 @@ class SignupController extends GetxController {
     try {
       // Start loading
       WFullScreenLoader.openLoadingDialog(
-          'We are proccessing you information...', TImages.darkAppLogo);
+          'We are proccessing you information...', TImages.docerAnimation);
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {

@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:winter_store/commons/widgets/appbar/appbar.dart';
 import 'package:winter_store/commons/widgets/custom_shapes/containers/primary_header_container.dart';
+import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:winter_store/commons/widgets/list_tile/setting_menu_tile.dart';
 import 'package:winter_store/commons/widgets/list_tile/user_profile_tile.dart';
 import 'package:winter_store/commons/widgets/texts/section_heading.dart';
+import 'package:winter_store/data/repositories/authentication/authentication_repository.dart';
+import 'package:winter_store/features/authentication/screens/login/login.dart';
 import 'package:winter_store/features/personalization/screens/address/address.dart';
 import 'package:winter_store/features/personalization/screens/orders/orders.dart';
 import 'package:winter_store/utils/constants/colors.dart';
@@ -122,6 +126,24 @@ class SettingScreen extends StatelessWidget {
                     subtitle: "Set image quality to be seen",
                     trailing: Switch(value: false, onChanged: (value) {}),
                   ),
+
+                  const SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
+
+                  SizedBox(
+                    width: double.infinity,
+                    child: RoundedContainer(
+                      showBorder: true,
+                      child: TextButton(
+                        onPressed: () => login(context),
+                        child: Text(
+                          'Logout',
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                      ),
+                    ),
+                  )
                 ],
               ),
             )
@@ -129,5 +151,30 @@ class SettingScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  login(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return CupertinoAlertDialog(
+            title: Text('Login'),
+            content: Text('Do you really want to logout?'),
+            actions: <Widget>[
+              TextButton(
+                  onPressed: () {
+                    Navigator.pop(context); //close Dialog
+                  },
+                  child: Text('Close')),
+              TextButton(
+                onPressed: () {
+                  AuthenticationRepository.instance.logout();
+                  Get.offAll(() => const LoginScreen());
+                },
+                child: Text('Yes'),
+              )
+            ],
+          );
+        });
   }
 }

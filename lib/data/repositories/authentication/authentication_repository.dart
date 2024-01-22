@@ -1,10 +1,12 @@
 import 'dart:developer' as dev show log;
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:winter_store/features/authentication/screens/login/login.dart';
 import 'package:winter_store/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:winter_store/features/authentication/screens/signup/verify_email.dart';
@@ -83,6 +85,7 @@ class AuthenticationRepository extends GetxController {
     }
   }
 
+// Logout
   Future<void> logout() async {
     try {
       await _auth.signOut();
@@ -96,6 +99,52 @@ class AuthenticationRepository extends GetxController {
       throw TFirebaseAuthException(e.code).message;
     } catch (e) {
       throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  Future<UserCredential> loginWithEmailAndPasswod(
+      String email, String password) async {
+    try {
+      return await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  Future<UserCredential?> signInWithGoole() async {
+    try {
+      // Trigger the authencation flow
+      final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
+
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication? googleAuth =
+          await userAccount?.authentication;
+
+      // create a new credential
+      final credentials = GoogleAuthProvider.credential(
+          accessToken: googleAuth?.accessToken, idToken: googleAuth?.idToken);
+
+      return await _auth.signInWithCredential(credentials);
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } catch (e) {
+      if (kDebugMode) print('Something went wrong. Please try again.');
+      return null;
     }
   }
 }

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:winter_store/commons/widgets/appbar/appbar.dart';
+import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:winter_store/commons/widgets/images/rounded_image.dart';
 import 'package:winter_store/commons/widgets/texts/section_heading.dart';
 import 'package:winter_store/features/personalization/screens/profile/widgets/profile_menu.dart';
 import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
+import 'package:winter_store/utils/constants/text_strings.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -117,7 +119,28 @@ class ProfileScreen extends StatelessWidget {
               ),
               Center(
                 child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (_) {
+                            return RoundedContainer(
+                              padding: EdgeInsets.all(TSizes.md),
+                              child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      'Confirm',
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .titleLarge,
+                                    ),
+                                    const SizedBox(
+                                      height: TSizes.spaceBtwItems,
+                                    ),
+                                  ]),
+                            );
+                          });
+                    },
                     child: Text(
                       "Close Account",
                       style: Theme.of(context).textTheme.bodyMedium!.apply(
