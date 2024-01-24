@@ -6,6 +6,7 @@ import 'package:winter_store/utils/loaders/loaders.dart';
 
 class UserController extends GetxController {
   static UserController get instance => Get.find();
+  final userRepository = Get.put(UserRepository());
 
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
@@ -24,7 +25,7 @@ class UserController extends GetxController {
             phoneNumber: userCredentials.user!.phoneNumber ?? '',
             profilePicture: userCredentials.user!.photoURL ?? '');
 
-        await UserRepository.instance.saveUserRecord(newUser);
+        await userRepository.saveUserRecord(newUser);
       }
     } catch (e) {
       WLoader.waringSnackbar(

@@ -49,5 +49,27 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>keychain-access-groups</key>
+    <array>
+        <string>$(AppIdentifierPrefix)com.google.GIDSignIn</string>
+    </array>
+	<key>GIDClientID</key>
+<string>450727470597-02dcr7ngg258stvph5jmnrui6056324m.apps.googleusercontent.com</string>
+<!-- Put me in the [my_project]/ios/Runner/Info.plist file -->
+<!-- Google Sign-in Section -->
+<key>CFBundleURLTypes</key>
+<array>
+	<dict>
+		<key>CFBundleTypeRole</key>
+		<string>Editor</string>
+		<key>CFBundleURLSchemes</key>
+		<array>
+			<!-- TODO Replace this value: -->
+			<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+	<string>com.googleusercontent.apps.450727470597-02dcr7ngg258stvph5jmnrui6056324m</string>
+		</array>
+	</dict>
+</array>
+<!-- End of the Google Sign-in Section -->
 </dict>
 </plist>

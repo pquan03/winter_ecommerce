@@ -10,11 +10,11 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		+5LICjvvz7m/kxmuccLV9mNDzic=
+		WU5S8yM53iAvXLU9n4kXSkY6p6Y=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		2sJpoUAbmtEDtATojWOI/GxYmDw=
+		7TxqV5NqNEmHfQcifN9/K1UmBiM=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -22,7 +22,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		Wh254KBH3h9aHX9DWnipHa8B0nM=
+		rr++QVQ9evSZ1NZJuf/O4r6kZ9o=
 		</data>
 		<key>flutter_assets/assets/fonts/Poppins-Bold.ttf</key>
 		<data>
@@ -219,6 +219,10 @@
 		<key>flutter_assets/assets/images/animations/cloud-uploading-animation.json</key>
 		<data>
 		MAJVBcw4NSW6TK2WH9phXaH6+3I=
+		</data>
+		<key>flutter_assets/assets/images/animations/docer-animation.json</key>
+		<data>
+		Iq0Huwj/Z58HicYWQoLlTTfigpc=
 		</data>
 		<key>flutter_assets/assets/images/animations/lady-adding-product-in-cart-animation.json</key>
 		<data>
@@ -670,7 +674,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		u0tpnFOHoCRuCP9jSRztSc4qFnM=
+		2S7We+jX6m+4Ou83QP8WikerVOw=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -695,14 +699,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rL+hFeJ5PxmwT+2Nepmom2apzO9UUOmlz5lmJ2GcE68=
+			4ICJYdMztaaUne+ssj/5vYnc57Q6Ut4auDG5et9dN6E=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DU+YgYaoeh9paLKwxUoh+vXkxW6I6Ii5GEb40urRpKs=
+			1MrIew4vRNhGFw02c1mSF2JtQZtqadY7WEBySxZIpdI=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -716,7 +720,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cwpBvowHxSI/iZEerSZNyTxs1bqW5DPE2H0l6dMvHZg=
+			zcRjIh1G9zRFr2DxVPOodVFEs9V5IMHs6v8PZ1Ev96I=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/fonts/Poppins-Bold.ttf</key>
@@ -1060,6 +1064,13 @@
 			<key>hash2</key>
 			<data>
 			//FnzwX28RE77jGvyCzi8mzZOzTz2NmBZBDdEEaSv8A=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/images/animations/docer-animation.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			sRKQGMAAtFjfC0kKceOaGfjUnF5BN6WZDQAYqaH1e8g=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/images/animations/lady-adding-product-in-cart-animation.json</key>
@@ -1850,7 +1861,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dL8vbXH2I4agtl/6dvbEEzPMdQ4A7ZLWqlQYsH56kS4=
+			J4orF8ue/fSDI3SFPlNuFxe6PrG8XqwJAb1RGwYSSmQ=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

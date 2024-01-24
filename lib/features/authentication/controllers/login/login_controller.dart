@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -19,6 +18,7 @@ class LoginController extends GetxController {
   final email = TextEditingController();
   final password = TextEditingController();
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+  final userController = Get.put(UserController());
 
   @override
   void onInit() {
@@ -78,7 +78,7 @@ class LoginController extends GetxController {
       final userCredentials =
           await AuthenticationRepository.instance.signInWithGoole();
 
-      await UserController.instance.saveUserRecord(userCredentials);
+      await userController.saveUserRecord(userCredentials);
 
       // Remove loader
       WFullScreenLoader.stopLoading();
@@ -87,6 +87,7 @@ class LoginController extends GetxController {
       AuthenticationRepository.instance.screenRedidrect();
     } catch (e) {
       WLoader.errorSnackBar(title: 'Oh Snap!', message: e.toString());
+      WFullScreenLoader.stopLoading();
     }
   }
 }

@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:winter_store/features/authentication/screens/password_configuration/reset_password.dart';
+import 'package:winter_store/commons/widgets/appbar/appbar.dart';
+import 'package:winter_store/features/authentication/controllers/forgot_password_controller/forgot_password_controller.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 import 'package:winter_store/utils/constants/text_strings.dart';
+import 'package:winter_store/utils/validators/validation.dart';
 
 class ForgetPasswordScreen extends StatelessWidget {
   const ForgetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ForgotPasswordController());
     return Scaffold(
-      appBar: AppBar(),
+      appBar: WAppBar(
+        showBackArrow: true,
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(TSizes.defaultSpace),
@@ -34,10 +39,15 @@ class ForgetPasswordScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections * 2,
               ),
               // Text Field
-              TextFormField(
-                decoration: InputDecoration(
-                    labelText: TTexts.email,
-                    prefixIcon: Icon(Iconsax.direct_right)),
+              Form(
+                key: controller.forgotPasswordFormKey,
+                child: TextFormField(
+                  controller: controller.email,
+                  validator: TValidator.validateEmail,
+                  decoration: InputDecoration(
+                      labelText: TTexts.email,
+                      prefixIcon: Icon(Iconsax.direct_right)),
+                ),
               ),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
@@ -46,8 +56,7 @@ class ForgetPasswordScreen extends StatelessWidget {
               SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () =>
-                          Get.off(() => const ResetPasswordScreen()),
+                      onPressed: () => controller.sendPasswordResetEmail(),
                       child: const Text(TTexts.submit)))
             ],
           ),
