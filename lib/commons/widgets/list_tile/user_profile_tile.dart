@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:winter_store/commons/widgets/images/rounded_image.dart';
+import 'package:winter_store/features/personalization/controllers/user_controller.dart';
 import 'package:winter_store/features/personalization/screens/profile/profile.dart';
 import 'package:winter_store/utils/constants/colors.dart';
 import 'package:winter_store/utils/constants/image_strings.dart';
@@ -13,6 +14,7 @@ class UserProfileTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = UserController.instance;
     return ListTile(
       leading: RoundedImage(
         imageUrl: TImages.user,
@@ -21,14 +23,14 @@ class UserProfileTile extends StatelessWidget {
         padding: const EdgeInsets.all(0),
       ),
       title: Text(
-        "Winte No Snow",
+        controller.user.value.fullName,
         style: Theme.of(context)
             .textTheme
             .headlineSmall!
             .apply(color: TColors.white),
       ),
       subtitle: Text(
-        "winter@winter.com",
+        controller.user.value.email,
         style:
             Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white),
       ),

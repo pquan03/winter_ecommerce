@@ -136,7 +136,7 @@ class SettingScreen extends StatelessWidget {
                     child: RoundedContainer(
                       showBorder: true,
                       child: TextButton(
-                        onPressed: () => login(context),
+                        onPressed: () => logout(context),
                         child: Text(
                           'Logout',
                           style: Theme.of(context).textTheme.titleLarge,
@@ -153,7 +153,7 @@ class SettingScreen extends StatelessWidget {
     );
   }
 
-  login(BuildContext context) {
+  logout(BuildContext context) {
     showDialog(
         context: context,
         builder: (context) {

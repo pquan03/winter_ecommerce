@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:winter_store/utils/formatters/formatter.dart';
 
 class UserModel {
@@ -54,6 +55,23 @@ class UserModel {
       phoneNumber: map['phoneNumber'],
       profilePicture: map['profilePicture'],
     );
+  }
+
+  factory UserModel.fromSnapshot(
+      DocumentSnapshot<Map<String, dynamic>> document) {
+    if (document.data() != null) {
+      final data = document.data()!;
+      return UserModel(
+          id: document.id,
+          firstName: data['firstName'] ?? '',
+          lastName: data['lastName'] ?? '',
+          username: data['username'] ?? '',
+          email: data['email'] ?? '',
+          phoneNumber: data['phoneNumber'] ?? '',
+          profilePicture: data['profilePicture'] ?? '');
+    } else {
+      return UserModel.empty();
+    }
   }
 
   Map<String, dynamic> toJson() {

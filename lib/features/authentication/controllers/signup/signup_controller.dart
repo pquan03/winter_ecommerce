@@ -14,7 +14,7 @@ class SignupController extends GetxController {
 
   // Variables
   final Rx<bool> hidePassword = true.obs;
-  final Rx<bool> privacyPolicy = true.obs;
+  final Rx<bool> privacyPolicy = false.obs;
   final email = TextEditingController();
   final firstName = TextEditingController();
   final lastName = TextEditingController();
@@ -70,9 +70,9 @@ class SignupController extends GetxController {
               'Your account has been created! verify your email address to login');
 
       // Move to Verify Email Screen
-      Get.to(VerifyEmailScreen(
-        email: email.text.trim(),
-      ));
+      Get.to(() => VerifyEmailScreen(
+            email: email.text.trim(),
+          ));
     } catch (e) {
       WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
     } finally {
