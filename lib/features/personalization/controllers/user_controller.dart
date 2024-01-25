@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:winter_store/data/repositories/authentication/authentication_repository.dart';
 import 'package:winter_store/data/repositories/user/user_repository.dart';
 import 'package:winter_store/features/authentication/controllers/login/login_controller.dart';
+import 'package:winter_store/features/authentication/screens/login/login.dart';
 import 'package:winter_store/features/personalization/models/user_model.dart';
 import 'package:winter_store/features/personalization/screens/profile/widgets/re_authenticate_user_form.dart';
 import 'package:winter_store/utils/constants/image_strings.dart';
@@ -18,6 +20,7 @@ class UserController extends GetxController {
 
   Rx<UserModel> user = UserModel.empty().obs;
   Rx<bool> profileLoading = false.obs;
+  final GetStorage storage = GetStorage();
 
   final verifyEmail = TextEditingController();
   final verifyPassword = TextEditingController();
@@ -145,11 +148,16 @@ class UserController extends GetxController {
       // Stop loading
       WFullScreenLoader.stopLoading();
 
+      // Delete user in store
+      // check
+      storage.remove('REMEMBER_ME_EMAIL');
+      storage.remove('REMEMBER_ME_PASSWORD');
+
       // Show success snackbar
       WLoader.successSnackBar(
           title: 'Success', message: 'Your account has been deleted');
 
-      Get.offAll(() => LoginController());
+      Get.offAll(() => const LoginScreen());
     } catch (e) {
       WFullScreenLoader.stopLoading();
       WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());

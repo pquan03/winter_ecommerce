@@ -100,7 +100,7 @@ class ProfileScreen extends StatelessWidget {
               ),
               ProfileMenu(
                 title: "Phone Number",
-                text: "+84-086-3339999",
+                text: controller.user.value.phoneNumber,
                 onPressed: () {},
               ),
               ProfileMenu(

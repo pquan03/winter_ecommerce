@@ -31,15 +31,18 @@ class SignupController extends GetxController {
       // Check Internet Connectivity
       final isConnected = await NetworkManager.instance.isConnected();
       if (!isConnected) {
+        WFullScreenLoader.stopLoading();
         return;
       }
       // Form Validation
       if (!signupFormkey.currentState!.validate()) {
+        WFullScreenLoader.stopLoading();
         return;
       }
 
       // Privacy Policy check
       if (!privacyPolicy.value) {
+        WFullScreenLoader.stopLoading();
         WLoader.waringSnackbar(
             title: 'Accept Privacy Policy',
             message:
@@ -70,14 +73,16 @@ class SignupController extends GetxController {
           message:
               'Your account has been created! verify your email address to login');
 
+      // Remove loading
+      WFullScreenLoader.stopLoading();
+
       // Move to Verify Email Screen
       Get.to(() => VerifyEmailScreen(
             email: email.text.trim(),
           ));
     } catch (e) {
-      WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
-    } finally {
       WFullScreenLoader.stopLoading();
+      WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
     }
   }
 }

@@ -37,13 +37,13 @@ class VerifyEmailController extends GetxController {
       final user = FirebaseAuth.instance.currentUser;
       if (user?.emailVerified ?? false) {
         timer.cancel();
+        Get.off(() => SuccessScreen(
+            image: TImages.staticSuccessIllustration,
+            title: TTexts.yourAccountCreatedTitle,
+            subtitle: TTexts.yourAccountCreatedSubTitle,
+            onPressed: () =>
+                AuthenticationRepository.instance.screenRedidrect()));
       }
-      Get.off(() => SuccessScreen(
-          image: TImages.staticSuccessIllustration,
-          title: TTexts.yourAccountCreatedTitle,
-          subtitle: TTexts.yourAccountCreatedSubTitle,
-          onPressed: () =>
-              AuthenticationRepository.instance.screenRedidrect()));
     });
   }
 
