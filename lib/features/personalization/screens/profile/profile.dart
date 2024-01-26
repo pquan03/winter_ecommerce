@@ -6,6 +6,7 @@ import 'package:winter_store/commons/widgets/texts/section_heading.dart';
 import 'package:winter_store/features/personalization/controllers/user_controller.dart';
 import 'package:winter_store/features/personalization/screens/profile/widgets/change_name.dart';
 import 'package:winter_store/features/personalization/screens/profile/widgets/profile_menu.dart';
+import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -25,20 +26,25 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             children: [
               // Profile picture
-
               SizedBox(
                 width: double.infinity,
                 child: Column(
                   children: [
-                    RoundedImage(
-                      isNetworkImage: true,
-                      applyImageRadius: true,
-                      imageUrl: controller.user.value.profilePicture,
-                      width: 80,
-                      height: 80,
-                    ),
+                    Obx(() {
+                      final networkImage = controller.user.value.profilePicture;
+                      final image =
+                          networkImage.isEmpty ? TImages.user : networkImage;
+                      final isNetworkImage = networkImage.isNotEmpty;
+                      return RoundedImage(
+                        isNetworkImage: isNetworkImage,
+                        applyImageRadius: true,
+                        imageUrl: image,
+                        width: 80,
+                        height: 80,
+                      );
+                    }),
                     TextButton(
-                      onPressed: () {},
+                      onPressed: () => controller.uploadUserProfilePicture(),
                       child: const Text("Change Profile Picture"),
                     )
                   ],

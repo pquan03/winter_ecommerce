@@ -33,12 +33,9 @@ class AuthenticationRepository extends GetxController {
   screenRedidrect() async {
     final user = _auth.currentUser;
     if (user != null) {
-      dev.log('User is exist!!');
       if (user.emailVerified) {
-        dev.log('User\'s email is verified');
         Get.offAll(() => const NavigationMenu());
       } else {
-        dev.log('User\'s email isn\'t verified');
         Get.offAll(() => VerifyEmailScreen(
               email: _auth.currentUser?.email,
             ));
@@ -66,7 +63,7 @@ class AuthenticationRepository extends GetxController {
       throw const TFormatException();
     } on PlatformException catch (e) {
       throw TFirebaseAuthException(e.code).message;
-    } catch (e) {
+    } catch (_) {
       throw 'Something went wrong. Please try again.';
     }
   }
@@ -83,7 +80,7 @@ class AuthenticationRepository extends GetxController {
       throw const TFormatException();
     } on PlatformException catch (e) {
       throw TFirebaseAuthException(e.code).message;
-    } catch (e) {
+    } catch (_) {
       throw 'Something went wrong. Please try again.';
     }
   }
@@ -100,7 +97,7 @@ class AuthenticationRepository extends GetxController {
       throw const TFormatException();
     } on PlatformException catch (e) {
       throw TFirebaseAuthException(e.code).message;
-    } catch (e) {
+    } catch (_) {
       if (kDebugMode) print('Something went wrong. Please try again.');
       return;
     }
@@ -118,7 +115,7 @@ class AuthenticationRepository extends GetxController {
       throw const TFormatException();
     } on PlatformException catch (e) {
       throw TFirebaseAuthException(e.code).message;
-    } catch (e) {
+    } catch (_) {
       throw 'Something went wrong. Please try again.';
     }
   }
@@ -136,7 +133,7 @@ class AuthenticationRepository extends GetxController {
       throw const TFormatException();
     } on PlatformException catch (e) {
       throw TFirebaseAuthException(e.code).message;
-    } catch (e) {
+    } catch (_) {
       throw 'Something went wrong. Please try again.';
     }
   }
@@ -156,7 +153,7 @@ class AuthenticationRepository extends GetxController {
       throw const TFormatException();
     } on PlatformException catch (e) {
       throw TFirebaseAuthException(e.code).message;
-    } catch (e) {
+    } catch (_) {
       throw 'Something went wrong. Please try again.';
     }
   }
@@ -174,7 +171,7 @@ class AuthenticationRepository extends GetxController {
       throw const TFormatException();
     } on PlatformException catch (e) {
       throw TFirebaseAuthException(e.code).message;
-    } catch (e) {
+    } catch (_) {
       throw 'Something went wrong. Please try again.';
     }
   }
@@ -201,7 +198,7 @@ class AuthenticationRepository extends GetxController {
       throw const TFormatException();
     } on PlatformException catch (e) {
       throw TFirebaseAuthException(e.code).message;
-    } catch (e) {
+    } catch (_) {
       if (kDebugMode) print('Something went wrong. Please try again.');
       return null;
     }

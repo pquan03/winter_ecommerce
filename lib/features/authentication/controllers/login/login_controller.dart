@@ -12,12 +12,15 @@ class LoginController extends GetxController {
   static LoginController get instance => Get.find();
 
   // Variables
-  final rememberMe = false.obs;
-  final hidePassword = true.obs;
   final localStorage = GetStorage();
+  // ---  Form
+  final rememberMe = false.obs;
   final email = TextEditingController();
   final password = TextEditingController();
+  final hidePassword = true.obs;
   GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
+
+  // Controllers
   final userController = Get.put(UserController());
 
   @override

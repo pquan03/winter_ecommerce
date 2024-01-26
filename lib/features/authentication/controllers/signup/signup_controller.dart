@@ -13,15 +13,19 @@ class SignupController extends GetxController {
   static SignupController get instance => Get.find();
 
   // Variables
-  final Rx<bool> hidePassword = true.obs;
-  final Rx<bool> privacyPolicy = false.obs;
+
+  // ---  Form
   final email = TextEditingController();
   final firstName = TextEditingController();
   final lastName = TextEditingController();
   final username = TextEditingController();
   final password = TextEditingController();
+  final Rx<bool> hidePassword = true.obs;
   final phoneNumber = TextEditingController();
+  final Rx<bool> privacyPolicy = false.obs;
   GlobalKey<FormState> signupFormkey = GlobalKey<FormState>();
+
+
   // Signup
   void signup() async {
     try {
@@ -49,6 +53,7 @@ class SignupController extends GetxController {
                 'In order to create account, you must have to read and accept the Privacy Policy & Terms of Use.');
         return;
       }
+
       //Register user in Firebase Authentication & Save user data in Firebase
       final user = await AuthenticationRepository.instance
           .registerWithEmailAdPassword(email.text, password.text);
@@ -64,6 +69,7 @@ class SignupController extends GetxController {
             'https://as1.ftcdn.net/v2/jpg/03/46/83/96/1000_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpg',
       );
 
+      // Save user data in Firestore
       final userRepository = Get.put(UserRepository());
       await userRepository.saveUserRecord(newUser);
 

@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:winter_store/data/repositories/authentication/authentication_repository.dart';
 import 'package:winter_store/data/repositories/user/user_repository.dart';
 import 'package:winter_store/features/authentication/controllers/login/login_controller.dart';
@@ -47,6 +48,8 @@ class UserController extends GetxController {
 
   Future<void> saveUserRecord(UserCredential? userCredentials) async {
     try {
+      await fetchUserRecord();
+
       if (userCredentials != null) {
         final nameParts =
             UserModel.nameParts(userCredentials.user?.displayName ?? '');
@@ -160,6 +163,28 @@ class UserController extends GetxController {
       Get.offAll(() => const LoginScreen());
     } catch (e) {
       WFullScreenLoader.stopLoading();
+      WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
+    }
+  }
+
+  Future<void> uploadUserProfilePicture() async {
+    try {
+      final image = await ImagePicker().pickImage(
+          source: ImageSource.gallery,
+          imageQuality: 70,
+          maxHeight: 512,
+          maxWidth: 512);
+      if (image == null) return;
+      final imageUrl = await UserRepository.instance
+          .uploadImage('Users/Images/Profile', image);
+
+      Map<String, dynamic> json = {'profilePicture': imageUrl};
+      await UserRepository.instance.updateSingleField(json);
+      user.value.profilePicture = imageUrl;
+
+      WLoader.successSnackBar(
+          title: 'Success', message: 'Profile picture updated');
+    } catch (e) {
       WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
     }
   }

@@ -71,5 +71,13 @@
 	</dict>
 </array>
 <!-- End of the Google Sign-in Section -->
+
+<!-- Image Picker -->
+	<key>NSPhotoLibraryUsageDescription</key>
+		<string>Let me access your photo library</string>
+	<key>NSCameraUsageDescription</key>
+		<string>Let me access your camera</string>
+	<key>NSMicrophoneUsageDescription</key>
+		<string>Let me access your microphone</string>
 </dict>
 </plist>

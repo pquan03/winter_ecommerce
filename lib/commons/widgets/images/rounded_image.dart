@@ -1,4 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:winter_store/commons/widgets/loaders/shimmer_effect.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 
 class RoundedImage extends StatelessWidget {
@@ -39,21 +41,28 @@ class RoundedImage extends StatelessWidget {
         height: height,
         padding: padding,
         decoration: BoxDecoration(
-          color: backgroundColor,
+          color: Colors.red,
+          // color: backgroundColor,
           border: border,
           borderRadius: BorderRadius.circular(TSizes.md),
         ),
         child: ClipRRect(
-            borderRadius: applyImageRadius
-                ? BorderRadius.circular(borderRadius)
-                : BorderRadius.zero,
-            child: Image(
-              color: overlayColor,
-              image: isNetworkImage
-                  ? NetworkImage(imageUrl)
-                  : AssetImage(imageUrl) as ImageProvider,
-              fit: fit,
-            )),
+          borderRadius:
+              applyImageRadius ? BorderRadius.circular(100) : BorderRadius.zero,
+          child: isNetworkImage
+              ? CachedNetworkImage(
+                  fit: fit,
+                  color: overlayColor,
+                  imageUrl: imageUrl,
+                  progressIndicatorBuilder: (context, url, downloadProgess) =>
+                      const ShimmerEffect(width: 55, height: 55),
+                  errorWidget: (context, url, error) => const Icon(Icons.error))
+              : Image(
+                  color: overlayColor,
+                  image: AssetImage(imageUrl),
+                  fit: fit,
+                ),
+        ),
       ),
     );
   }
