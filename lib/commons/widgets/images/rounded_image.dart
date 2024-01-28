@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:winter_store/commons/widgets/loaders/shimmer_effect.dart';
+import 'package:winter_store/commons/widgets/shimmer/shimmer_effect.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 
 class RoundedImage extends StatelessWidget {
@@ -41,8 +41,7 @@ class RoundedImage extends StatelessWidget {
         height: height,
         padding: padding,
         decoration: BoxDecoration(
-          color: Colors.red,
-          // color: backgroundColor,
+          color: backgroundColor,
           border: border,
           borderRadius: BorderRadius.circular(TSizes.md),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:winter_store/commons/widgets/images/rounded_image.dart';
 import 'package:winter_store/utils/constants/colors.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 import 'package:winter_store/utils/helpers/helper_functions.dart';
@@ -36,10 +37,12 @@ class VerticalImageText extends StatelessWidget {
                   color:
                       backgroundColor ?? (dark ? TColors.black : TColors.white),
                   borderRadius: BorderRadius.circular(100)),
-              child: Image(
-                image: AssetImage(image),
-                fit: BoxFit.cover,
-                color: dark ? TColors.light : TColors.black,
+              child: RoundedImage(
+                isNetworkImage: true,
+                padding: EdgeInsets.all(TSizes.md * 1.4),
+                imageUrl: image,
+                backgroundColor: backgroundColor,
+                overlayColor: dark ? TColors.black : TColors.white,
               ),
             ),
             // Text

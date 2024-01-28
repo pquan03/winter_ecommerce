@@ -1,4 +1,3 @@
-import 'dart:developer' as dev show log;
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
