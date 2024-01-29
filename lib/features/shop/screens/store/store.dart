@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:winter_store/commons/widgets/appbar/appbar.dart';
@@ -7,6 +8,7 @@ import 'package:winter_store/commons/widgets/layouts/grid_layout.dart';
 import 'package:winter_store/commons/widgets/products/cart/cart_menu_icon.dart';
 import 'package:winter_store/commons/widgets/texts/section_heading.dart';
 import 'package:winter_store/commons/widgets/brands/brand_card.dart';
+import 'package:winter_store/features/shop/controllers/categories_controller.dart';
 import 'package:winter_store/features/shop/screens/all_brands/all_brands.dart';
 import 'package:winter_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:winter_store/utils/constants/colors.dart';
@@ -18,15 +20,23 @@ class StoreScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final categories = CategoriesController.instance.featuredCategories;
+    final dark = THelperFunctions.isDarkMode(context);
+    final length = categories.length;
     return DefaultTabController(
-      length: 5,
+      length: length,
       child: Scaffold(
         appBar: WAppBar(
           title: Text(
             "Store",
             style: Theme.of(context).textTheme.titleMedium,
           ),
-          actions: [CartCounterIcon(onPressed: () {})],
+          actions: [
+            CartCounterIcon(
+              onPressed: () {},
+              color: dark ? TColors.light : TColors.dark,
+            )
+          ],
         ),
         body: NestedScrollView(
             headerSliverBuilder: (_, innerBoxIsScrolled) {
@@ -81,33 +91,19 @@ class StoreScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    bottom: WTabBar(tabs: [
-                      Tab(
-                        child: Text('Sports'),
-                      ),
-                      Tab(
-                        child: Text('Furniture'),
-                      ),
-                      Tab(
-                        child: Text('Electronics'),
-                      ),
-                      Tab(
-                        child: Text('Clothes'),
-                      ),
-                      Tab(
-                        child: Text('Cosmetics'),
-                      ),
-                    ])),
+                    bottom: WTabBar(
+                        tabs: categories
+                            .map((element) =>
+                                Tab(child: SizedBox(child: Text(element.name))))
+                            .toList())),
               ];
             },
             body: TabBarView(
-              children: [
-                CategoryTab(),
-                CategoryTab(),
-                CategoryTab(),
-                CategoryTab(),
-                CategoryTab(),
-              ],
+              children: categories
+                  .map((element) => CategoryTab(
+                        category: element,
+                      ))
+                  .toList(),
             )),
       ),
     );

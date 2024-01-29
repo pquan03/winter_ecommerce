@@ -46,15 +46,16 @@ class RoundedImage extends StatelessWidget {
           borderRadius: BorderRadius.circular(TSizes.md),
         ),
         child: ClipRRect(
-          borderRadius:
-              applyImageRadius ? BorderRadius.circular(100) : BorderRadius.zero,
+          borderRadius: applyImageRadius
+              ? BorderRadius.circular(borderRadius)
+              : BorderRadius.zero,
           child: isNetworkImage
               ? CachedNetworkImage(
                   fit: fit,
                   color: overlayColor,
                   imageUrl: imageUrl,
                   progressIndicatorBuilder: (context, url, downloadProgess) =>
-                      const ShimmerEffect(width: 55, height: 55),
+                      ShimmerEffect(width: width ?? 55, height: height ?? 55),
                   errorWidget: (context, url, error) => const Icon(Icons.error))
               : Image(
                   color: overlayColor,

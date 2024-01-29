@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:winter_store/commons/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:winter_store/commons/widgets/custom_shapes/containers/search_container.dart';
 import 'package:winter_store/commons/widgets/layouts/grid_layout.dart';
 import 'package:winter_store/commons/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:winter_store/commons/widgets/texts/section_heading.dart';
+import 'package:winter_store/features/shop/controllers/product_controller.dart';
 import 'package:winter_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:winter_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:winter_store/features/shop/screens/home/widgets/promo_slider.dart';
-import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -15,6 +16,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ProductController());
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -65,20 +67,26 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 children: [
-                  PromoSlider(
-                    banners: [
-                      TImages.promoBanner1,
-                      TImages.promoBanner2,
-                      TImages.promoBanner3
-                    ],
-                  ),
+                  PromoSlider(),
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
-                  GridLayout(
-                      itemCount: 4,
-                      mainAxisExtent: 288,
-                      itemBuilder: (_, index) => const ProductCardVertical())
+                  Obx(() {
+                    if (controller.isLoading.value) {
+                      return const Center(child: CircularProgressIndicator());
+                    }
+
+                    if (controller.featuredProducts.isEmpty) {
+                      return const Center(child: Text('No products found'));
+                    }
+
+                    return GridLayout(
+                        itemCount: controller.featuredProducts.length,
+                        mainAxisExtent: 288,
+                        itemBuilder: (_, index) => ProductCardVertical(
+                              product: controller.featuredProducts[index],
+                            ));
+                  })
                 ],
               ),
             ),

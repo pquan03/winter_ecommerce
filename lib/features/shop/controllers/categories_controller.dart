@@ -5,7 +5,7 @@ import 'package:winter_store/utils/loaders/loaders.dart';
 
 class CategoriesController extends GetxController {
   // Singleton
-  static CategoriesController get instance => CategoriesController();
+  static CategoriesController get instance => Get.find();
 
   // Variables
   final _categoriesRepository = Get.put(CategoriesRepository());
@@ -32,7 +32,7 @@ class CategoriesController extends GetxController {
       // Filter featured categories
       featuredCategories.assignAll(categories
           .where((element) => element.isFeatured && element.parentID.isEmpty)
-          .take(9)
+          .take(8)
           .toList());
     } catch (e) {
       WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());

@@ -38,11 +38,12 @@ class VerticalImageText extends StatelessWidget {
                       backgroundColor ?? (dark ? TColors.black : TColors.white),
                   borderRadius: BorderRadius.circular(100)),
               child: RoundedImage(
+                applyImageRadius: true,
                 isNetworkImage: true,
-                padding: EdgeInsets.all(TSizes.md * 1.4),
+                // padding: EdgeInsets.all(TSizes.md * 1.4),
                 imageUrl: image,
                 backgroundColor: backgroundColor,
-                overlayColor: dark ? TColors.black : TColors.white,
+                overlayColor: dark ? TColors.white : TColors.dark,
               ),
             ),
             // Text
@@ -59,6 +60,7 @@ class VerticalImageText extends StatelessWidget {
                     .apply(color: textColor),
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.center,
               ),
             )
           ],

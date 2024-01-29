@@ -24,8 +24,7 @@ class UserProfileTile extends StatelessWidget {
           isNetworkImage: isNetworkImage,
           applyImageRadius: true,
           imageUrl: image,
-          width: 80,
-          height: 80,
+          borderRadius: 100,
         );
       }),
       title: Text(

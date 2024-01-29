@@ -6,9 +6,11 @@ class CartCounterIcon extends StatelessWidget {
   const CartCounterIcon({
     super.key,
     required this.onPressed,
+    this.color = TColors.light,
   });
 
   final VoidCallback onPressed;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +20,7 @@ class CartCounterIcon extends StatelessWidget {
           onPressed: onPressed,
           icon: Icon(
             Iconsax.shopping_bag,
-            color: TColors.light,
+            color: color,
           ),
         ),
         Positioned(

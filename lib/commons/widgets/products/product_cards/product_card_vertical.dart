@@ -9,6 +9,7 @@ import 'package:winter_store/commons/widgets/products/cart/add_card_button.dart'
 import 'package:winter_store/commons/widgets/products/product_cards/brand_title_with_verified_icon.dart';
 import 'package:winter_store/commons/widgets/products/text/product_title_text.dart';
 import 'package:winter_store/commons/widgets/texts/product_price_text.dart';
+import 'package:winter_store/features/shop/models/product_model.dart';
 import 'package:winter_store/features/shop/screens/product_details/product_detail.dart';
 import 'package:winter_store/utils/constants/colors.dart';
 import 'package:winter_store/utils/constants/image_strings.dart';
@@ -16,7 +17,9 @@ import 'package:winter_store/utils/constants/sizes.dart';
 import 'package:winter_store/utils/helpers/helper_functions.dart';
 
 class ProductCardVertical extends StatelessWidget {
-  const ProductCardVertical({super.key});
+  const ProductCardVertical({super.key, this.product});
+
+  final ProductModel? product;
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +44,8 @@ class ProductCardVertical extends StatelessWidget {
                 children: [
                   // Thumbnail image
                   RoundedImage(
-                    imageUrl: TImages.productImage1,
+                    isNetworkImage: product?.thumbnail != null ? true : false,
+                    imageUrl: product?.thumbnail ?? TImages.productImage1,
                     applyImageRadius: true,
                   ),
                   // Sale tag
@@ -84,12 +88,14 @@ class ProductCardVertical extends StatelessWidget {
                 children: [
                   // Title
                   ProducTitleText(
-                      title: "Green Nike Air Shoes", smallSize: true),
+                      title: product?.title ?? "Green Nike Air Shoes",
+                      smallSize: true),
                   const SizedBox(
                     height: TSizes.xs,
                   ),
                   // Brand
-                  BrandTitleWithVerifiedIcon(title: 'Nike')
+                  BrandTitleWithVerifiedIcon(
+                      title: product?.brand?.name ?? "Nike"),
                 ],
               ),
             ),
@@ -103,7 +109,7 @@ class ProductCardVertical extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: TSizes.sm),
                   child: ProductPriceText(
-                    price: '35',
+                    price: product?.price.toString() ?? '0.0',
                     isLarge: true,
                   ),
                 ),
