@@ -25,9 +25,9 @@ class BrandModel {
     if (json.isEmpty) return BrandModel.empty();
     return BrandModel(
       id: json['id'],
-      image: json['Image'],
-      productsCount: json['ProductsCount'],
-      isFeatured: json['isFeatured'],
+      image: json['image'],
+      productsCount: int.parse((json['products_count'] ?? 0).toString()),
+      isFeatured: json['is_featured'],
       name: json['name'],
     );
   }

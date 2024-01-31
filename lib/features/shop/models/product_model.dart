@@ -55,7 +55,7 @@ class ProductModel {
       final json = documentSnapshot.data()!;
       return ProductModel(
         id: documentSnapshot.id,
-        stock: json['stock'],
+        stock: int.parse((json['stock'] ?? 0).toString()),
         sku: json['SKU'] ?? '',
         title: json['title'] ?? '',
         description: json['description'] ?? '',
@@ -78,7 +78,28 @@ class ProductModel {
         ),
       );
     } else {
+      print('Document is empty');
       return ProductModel.empty();
     }
   }
+
+  // To json
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'stock': stock,
+        'SKU': sku,
+        'title': title,
+        'description': description,
+        'categoryId': categoryId,
+        // 'createdAt': createdAt,
+        'price': price,
+        'salePrice': salePrice,
+        'thumbnail': thumbnail,
+        'isFeatured': isFeatured,
+        'Brand': brand?.toJson(),
+        'Images': images,
+        'productType': productType,
+        'productAttributes': productAttributes?.map((e) => e.toJson()).toList(),
+        'productVariations': productVariations?.map((e) => e.toJson()).toList(),
+      };
 }

@@ -1,7 +1,9 @@
 import 'package:get/get.dart';
 import 'package:winter_store/data/repositories/banners/banners_repository.dart';
 import 'package:winter_store/features/shop/models/banner_model.dart';
+import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/loaders/loaders.dart';
+import 'package:winter_store/utils/popups/full_screen_loader.dart';
 
 class BannerController extends GetxController {
   // Singleton
@@ -36,6 +38,28 @@ class BannerController extends GetxController {
     } finally {
       // Remove loading
       isLoading.value = false;
+    }
+  }
+
+  // Push all data to firebase storage
+  Future<void> uploadAllBanners() async {
+    try {
+      // Start loading
+      WFullScreenLoader.openLoadingDialog(
+          'Processing...', TImages.docerAnimation);
+
+      // Push all banners to firebase storage
+      final bannerRepository = Get.put(BannerRepository());
+      await bannerRepository.pushAllBanners();
+
+      // Show success message
+      WLoader.successSnackBar(
+          title: 'Success', message: 'All banners uploaded successfully');
+    } catch (e) {
+      WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
+    } finally {
+      // Hide loading
+      WFullScreenLoader.stopLoading();
     }
   }
 }

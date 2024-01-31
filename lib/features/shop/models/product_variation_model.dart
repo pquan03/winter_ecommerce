@@ -34,7 +34,7 @@ class ProductVariationModel {
       image: json['image'] ?? '',
       price: double.parse((json['price'] ?? 0.0).toString()),
       salePrice: double.parse((json['salePrice'] ?? 0.0).toString()),
-      stock: json['stock'] ?? 0,
+      stock: int.parse((json['stock'] ?? 0).toString()),
       description: json['description'] ?? '',
       sku: json['SKU'] ?? '',
     );

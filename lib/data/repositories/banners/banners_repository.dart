@@ -2,10 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:winter_store/data/dummy/dummy.dart';
 import 'package:winter_store/features/shop/models/banner_model.dart';
 import 'package:winter_store/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:winter_store/utils/exceptions/format_exceptions.dart';
-import 'package:winter_store/utils/helpers/log_function.dart';
 
 class BannerRepository extends GetxController {
   // Singleton
@@ -24,6 +24,26 @@ class BannerRepository extends GetxController {
       final list =
           snapshot.docs.map((e) => BannerModel.fromSnapshot(e)).toList();
       return list;
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } catch (_) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  // Upload all banners to firebase storage
+  Future<void> pushAllBanners() async {
+    try {
+      final banners = WDummy.listBanners;
+      for (BannerModel banner in banners) {
+        await _db.collection('banners').doc(banner.id).set(banner.toJson());
+      }
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } on FirebaseException catch (e) {

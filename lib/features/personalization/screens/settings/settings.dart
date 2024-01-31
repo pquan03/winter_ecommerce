@@ -12,6 +12,7 @@ import 'package:winter_store/data/repositories/authentication/authentication_rep
 import 'package:winter_store/features/authentication/screens/login/login.dart';
 import 'package:winter_store/features/personalization/screens/address/address.dart';
 import 'package:winter_store/features/personalization/screens/orders/orders.dart';
+import 'package:winter_store/features/shop/screens/upload_data/upload_data.dart';
 import 'package:winter_store/utils/constants/colors.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 
@@ -106,7 +107,7 @@ class SettingScreen extends StatelessWidget {
                     icon: Iconsax.document_upload,
                     title: "Load Data",
                     subtitle: "Upload data to your clould firebase",
-                    trailing: Switch(value: true, onChanged: (value) {}),
+                    onTap: () => Get.to(() => const UploadDataScreen()),
                   ),
                   SettingMenuTile(
                     icon: Iconsax.location,

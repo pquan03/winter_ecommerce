@@ -37,6 +37,7 @@ class RoundedImage extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
+        alignment: Alignment.center,
         width: width,
         height: height,
         padding: padding,
@@ -55,7 +56,9 @@ class RoundedImage extends StatelessWidget {
                   color: overlayColor,
                   imageUrl: imageUrl,
                   progressIndicatorBuilder: (context, url, downloadProgess) =>
-                      ShimmerEffect(width: width ?? 55, height: height ?? 55),
+                      ShimmerEffect(
+                          width: width ?? double.infinity,
+                          height: height ?? double.infinity),
                   errorWidget: (context, url, error) => const Icon(Icons.error))
               : Image(
                   color: overlayColor,

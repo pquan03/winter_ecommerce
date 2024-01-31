@@ -20,11 +20,15 @@ class UserProfileTile extends StatelessWidget {
         final networkImage = controller.user.value.profilePicture;
         final image = networkImage.isEmpty ? TImages.user : networkImage;
         final isNetworkImage = networkImage.isNotEmpty;
-        return RoundedImage(
-          isNetworkImage: isNetworkImage,
-          applyImageRadius: true,
-          imageUrl: image,
-          borderRadius: 100,
+        return SizedBox(
+          width: 56,
+          height: 56,
+          child: RoundedImage(
+            isNetworkImage: isNetworkImage,
+            applyImageRadius: true,
+            imageUrl: image,
+            borderRadius: 56,
+          ),
         );
       }),
       title: Text(
