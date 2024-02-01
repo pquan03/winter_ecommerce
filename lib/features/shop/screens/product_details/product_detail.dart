@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 import 'package:winter_store/commons/widgets/texts/section_heading.dart';
+import 'package:winter_store/features/shop/models/product_model.dart';
 import 'package:winter_store/features/shop/screens/product_details/widgets/bottom_add_to_cart_widget.dart';
 import 'package:winter_store/features/shop/screens/product_details/widgets/product_attributes.dart';
 import 'package:winter_store/features/shop/screens/product_details/widgets/product_image_slider.dart';
@@ -12,7 +13,8 @@ import 'package:winter_store/features/shop/screens/product_reviews/product_revie
 import 'package:winter_store/utils/constants/sizes.dart';
 
 class ProductDetailScreen extends StatelessWidget {
-  const ProductDetailScreen({super.key});
+  const ProductDetailScreen({super.key, required this.product});
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +24,9 @@ class ProductDetailScreen extends StatelessWidget {
         child: Column(
           children: [
             // 1 - Product Image Slider
-            ProductImageSlider(),
+            ProductImageSlider(
+              product: product,
+            ),
 
             // 2 - Product details
             Padding(
@@ -36,12 +40,16 @@ class ProductDetailScreen extends StatelessWidget {
                   RatingAndShareButton(),
 
                   // Price, Title, Stock & Brand
-                  ProductMetaData(),
+                  ProductMetaData(
+                    product: product,
+                  ),
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
                   // Attributes
-                  ProductAttributes(),
+                  ProductAttributes(
+                    product: product,
+                  ),
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
@@ -63,7 +71,7 @@ class ProductDetailScreen extends StatelessWidget {
                     height: TSizes.spaceBtwItems,
                   ),
                   ReadMoreText(
-                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+                    product.description!,
                     trimLines: 2,
                     trimMode: TrimMode.Line,
                     trimCollapsedText: "Show more",

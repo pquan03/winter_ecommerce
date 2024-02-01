@@ -363,6 +363,234 @@ class WDummy {
               "Color": "Blue",
             },
           ),
-        ])
+        ]),
+    ProductModel(
+        id: "5",
+        stock: 10,
+        isFeatured: true,
+        productType: 'product.variable',
+        title: "Apple Ipad Pro 2021 256GB",
+        description:
+            "The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen.",
+        price: 150,
+        salePrice: 100,
+        images: [
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone8_mobile_back.png?alt=media&token=29d3eac9-f1cd-4138-801e-9402e9ad3731",
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_black.png?alt=media&token=7c7383bc-ee26-45e5-a5e6-218afc859334",
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_green.png?alt=media&token=565b0195-991e-4579-922f-49c52cb4d814",
+        ],
+        thumbnail:
+            "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone8_mobile.png?alt=media&token=e593c29b-7779-41ae-a3b5-3a04fc0120f6",
+        categoryId: "1",
+        brand: BrandModel(
+            id: "1",
+            name: "Apple",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/brands%2Fapple-logo.png?alt=media&token=6de5d8d5-1f9e-41a2-856f-cb38d1ae4ec9",
+            isFeatured: true,
+            productsCount: 10),
+        productAttributes: [
+          ProductAttributeModel(
+              name: "Color", values: ["Red", "Blue", "Green"]),
+        ],
+        productVariations: [
+          ProductVariationModel(
+            id: "1",
+            price: 100,
+            salePrice: 80,
+            stock: 10,
+            description: "Apple Ipad Pro 2021 256GB",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_black.png?alt=media&token=7c7383bc-ee26-45e5-a5e6-218afc859334",
+            sku: "APPLE-IPAD-PRO-2021-256GB-BLACK",
+            attributes: {
+              "Color": "Red",
+            },
+          ),
+          ProductVariationModel(
+            id: "2",
+            price: 100,
+            salePrice: 80,
+            stock: 10,
+            description: "Apple Ipad Pro 2021 256GB",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_green.png?alt=media&token=565b0195-991e-4579-922f-49c52cb4d814",
+            sku: "APPLE-IPAD-PRO-2021-256GB-GREEN",
+            attributes: {
+              "Color": "Blue",
+            },
+          ),
+        ]),
+    ProductModel(
+        id: "6",
+        stock: 10,
+        isFeatured: true,
+        productType: 'product.variable',
+        title: "Apple Ipad Pro 2021 256GB",
+        description:
+            "The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen.",
+        price: 150,
+        salePrice: 100,
+        images: [
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone8_mobile_back.png?alt=media&token=29d3eac9-f1cd-4138-801e-9402e9ad3731",
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_black.png?alt=media&token=7c7383bc-ee26-45e5-a5e6-218afc859334",
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_green.png?alt=media&token=565b0195-991e-4579-922f-49c52cb4d814",
+        ],
+        thumbnail:
+            "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone8_mobile.png?alt=media&token=e593c29b-7779-41ae-a3b5-3a04fc0120f6",
+        categoryId: "1",
+        brand: BrandModel(
+            id: "1",
+            name: "Apple",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/brands%2Fapple-logo.png?alt=media&token=6de5d8d5-1f9e-41a2-856f-cb38d1ae4ec9",
+            isFeatured: true,
+            productsCount: 10),
+        productAttributes: [
+          ProductAttributeModel(
+              name: "Color", values: ["Red", "Blue", "Green"]),
+        ],
+        productVariations: [
+          ProductVariationModel(
+            id: "1",
+            price: 100,
+            salePrice: 80,
+            stock: 10,
+            description: "Apple Ipad Pro 2021 256GB",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_black.png?alt=media&token=7c7383bc-ee26-45e5-a5e6-218afc859334",
+            sku: "APPLE-IPAD-PRO-2021-256GB-BLACK",
+            attributes: {
+              "Color": "Red",
+            },
+          ),
+          ProductVariationModel(
+            id: "2",
+            price: 100,
+            salePrice: 80,
+            stock: 10,
+            description: "Apple Ipad Pro 2021 256GB",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_green.png?alt=media&token=565b0195-991e-4579-922f-49c52cb4d814",
+            sku: "APPLE-IPAD-PRO-2021-256GB-GREEN",
+            attributes: {
+              "Color": "Blue",
+            },
+          ),
+        ]),
+    ProductModel(
+        id: "7",
+        stock: 10,
+        isFeatured: true,
+        productType: 'product.variable',
+        title: "Apple Ipad Pro 2021 256GB",
+        description:
+            "The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen.",
+        price: 150,
+        salePrice: 100,
+        images: [
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone8_mobile_back.png?alt=media&token=29d3eac9-f1cd-4138-801e-9402e9ad3731",
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_black.png?alt=media&token=7c7383bc-ee26-45e5-a5e6-218afc859334",
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_green.png?alt=media&token=565b0195-991e-4579-922f-49c52cb4d814",
+        ],
+        thumbnail:
+            "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone8_mobile.png?alt=media&token=e593c29b-7779-41ae-a3b5-3a04fc0120f6",
+        categoryId: "1",
+        brand: BrandModel(
+            id: "1",
+            name: "Apple",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/brands%2Fapple-logo.png?alt=media&token=6de5d8d5-1f9e-41a2-856f-cb38d1ae4ec9",
+            isFeatured: true,
+            productsCount: 10),
+        productAttributes: [
+          ProductAttributeModel(
+              name: "Color", values: ["Red", "Blue", "Green"]),
+        ],
+        productVariations: [
+          ProductVariationModel(
+            id: "1",
+            price: 100,
+            salePrice: 80,
+            stock: 10,
+            description: "Apple Ipad Pro 2021 256GB",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_black.png?alt=media&token=7c7383bc-ee26-45e5-a5e6-218afc859334",
+            sku: "APPLE-IPAD-PRO-2021-256GB-BLACK",
+            attributes: {
+              "Color": "Red",
+            },
+          ),
+          ProductVariationModel(
+            id: "2",
+            price: 100,
+            salePrice: 80,
+            stock: 10,
+            description: "Apple Ipad Pro 2021 256GB",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_green.png?alt=media&token=565b0195-991e-4579-922f-49c52cb4d814",
+            sku: "APPLE-IPAD-PRO-2021-256GB-GREEN",
+            attributes: {
+              "Color": "Blue",
+            },
+          ),
+        ]),
+    ProductModel(
+        id: "8",
+        stock: 10,
+        isFeatured: true,
+        productType: 'product.variable',
+        title: "Apple Ipad Pro 2021 256GB",
+        description:
+            "The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen. The iPad Pro is a tablet computer made by Apple Inc. It comes in two sizes, with the larger one having a 12.9-inch screen.",
+        price: 150,
+        salePrice: 100,
+        images: [
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone8_mobile_back.png?alt=media&token=29d3eac9-f1cd-4138-801e-9402e9ad3731",
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_black.png?alt=media&token=7c7383bc-ee26-45e5-a5e6-218afc859334",
+          "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_green.png?alt=media&token=565b0195-991e-4579-922f-49c52cb4d814",
+        ],
+        thumbnail:
+            "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone8_mobile.png?alt=media&token=e593c29b-7779-41ae-a3b5-3a04fc0120f6",
+        categoryId: "1",
+        brand: BrandModel(
+            id: "1",
+            name: "Apple",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/brands%2Fapple-logo.png?alt=media&token=6de5d8d5-1f9e-41a2-856f-cb38d1ae4ec9",
+            isFeatured: true,
+            productsCount: 10),
+        productAttributes: [
+          ProductAttributeModel(
+              name: "Color", values: ["Red", "Blue", "Green"]),
+        ],
+        productVariations: [
+          ProductVariationModel(
+            id: "1",
+            price: 100,
+            salePrice: 80,
+            stock: 10,
+            description: "Apple Ipad Pro 2021 256GB",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_black.png?alt=media&token=7c7383bc-ee26-45e5-a5e6-218afc859334",
+            sku: "APPLE-IPAD-PRO-2021-256GB-BLACK",
+            attributes: {
+              "Color": "Red",
+            },
+          ),
+          ProductVariationModel(
+            id: "2",
+            price: 100,
+            salePrice: 80,
+            stock: 10,
+            description: "Apple Ipad Pro 2021 256GB",
+            image:
+                "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Products%2Fiphone_12_green.png?alt=media&token=565b0195-991e-4579-922f-49c52cb4d814",
+            sku: "APPLE-IPAD-PRO-2021-256GB-GREEN",
+            attributes: {
+              "Color": "Blue",
+            },
+          ),
+        ]),
   ];
 }

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:winter_store/commons/widgets/brands/brand_show_case.dart';
 import 'package:winter_store/commons/widgets/layouts/grid_layout.dart';
 import 'package:winter_store/commons/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:winter_store/commons/widgets/texts/section_heading.dart';
+import 'package:winter_store/data/dummy/dummy.dart';
 import 'package:winter_store/features/shop/models/cagegory_model.dart';
+import 'package:winter_store/features/shop/screens/all_products/all_products.dart';
 import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 
@@ -46,7 +49,8 @@ class CategoryTab extends StatelessWidget {
               // Products
               SectionHeading(
                 title: "You might like",
-                onButtonPressed: () {},
+                onButtonPressed: () =>
+                    Get.to(() => AllProductsScreen(title: category.name)),
               ),
               const SizedBox(
                 height: TSizes.spaceBtwItems,
@@ -54,7 +58,9 @@ class CategoryTab extends StatelessWidget {
 
               GridLayout(
                   itemCount: 4,
-                  itemBuilder: (_, index) => const ProductCardVertical())
+                  itemBuilder: (_, index) => ProductCardVertical(
+                        product: WDummy.listProducts[0],
+                      ))
             ],
           ),
         ),

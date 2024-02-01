@@ -12,20 +12,21 @@ import 'package:winter_store/commons/widgets/texts/product_price_text.dart';
 import 'package:winter_store/features/shop/models/product_model.dart';
 import 'package:winter_store/features/shop/screens/product_details/product_detail.dart';
 import 'package:winter_store/utils/constants/colors.dart';
-import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 import 'package:winter_store/utils/helpers/helper_functions.dart';
 
 class ProductCardVertical extends StatelessWidget {
-  const ProductCardVertical({super.key, this.product});
+  const ProductCardVertical({super.key, required this.product});
 
-  final ProductModel? product;
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return GestureDetector(
-      onTap: () => Get.to(() => const ProductDetailScreen()),
+      onTap: () => Get.to(() => ProductDetailScreen(
+            product: product,
+          )),
       child: Container(
         width: 180,
         padding: const EdgeInsets.all(1),
@@ -44,8 +45,8 @@ class ProductCardVertical extends StatelessWidget {
                 children: [
                   // Thumbnail image
                   RoundedImage(
-                    isNetworkImage: product?.thumbnail != null ? true : false,
-                    imageUrl: product?.thumbnail ?? TImages.productImage1,
+                    isNetworkImage: true,
+                    imageUrl: product.thumbnail,
                     applyImageRadius: true,
                   ),
                   // Sale tag
@@ -57,7 +58,7 @@ class ProductCardVertical extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(
                           horizontal: TSizes.sm, vertical: TSizes.xs),
                       child: Text(
-                        "25%",
+                        '${THelperFunctions.getPercentageOfPrice(product.price, product.salePrice!)}%',
                         style: Theme.of(context)
                             .textTheme
                             .labelLarge!
@@ -87,15 +88,13 @@ class ProductCardVertical extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   // Title
-                  ProducTitleText(
-                      title: product?.title ?? "Green Nike Air Shoes",
-                      smallSize: true),
+                  ProducTitleText(title: product.title, smallSize: true),
                   const SizedBox(
                     height: TSizes.xs,
                   ),
                   // Brand
                   BrandTitleWithVerifiedIcon(
-                      title: product?.brand?.name ?? "Nike"),
+                      title: product.brand?.name ?? "Winter"),
                 ],
               ),
             ),
@@ -109,7 +108,7 @@ class ProductCardVertical extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: TSizes.sm),
                   child: ProductPriceText(
-                    price: product?.price.toString() ?? '0.0',
+                    price: product.price.toString(),
                     isLarge: true,
                   ),
                 ),

@@ -3,6 +3,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:winter_store/commons/widgets/appbar/appbar.dart';
 import 'package:winter_store/commons/widgets/layouts/grid_layout.dart';
 import 'package:winter_store/commons/widgets/products/product_cards/product_card_vertical.dart';
+import 'package:winter_store/data/dummy/dummy.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 
 class AllProductsScreen extends StatelessWidget {
@@ -46,8 +47,8 @@ class AllProductsScreen extends StatelessWidget {
                 height: TSizes.spaceBtwSections,
               ),
               GridLayout(
-                  itemCount: 10,
-                  itemBuilder: (_, index) => const ProductCardVertical())
+                  itemCount: WDummy.listProducts.length,
+                  itemBuilder: (_, index) => ProductCardVertical(product: WDummy.listProducts[index],))
             ],
           ),
         ),

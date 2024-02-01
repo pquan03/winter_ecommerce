@@ -3,16 +3,16 @@ import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_co
 import 'package:winter_store/commons/widgets/products/product_cards/brand_title_with_verified_icon.dart';
 import 'package:winter_store/commons/widgets/products/text/product_title_text.dart';
 import 'package:winter_store/commons/widgets/texts/product_price_text.dart';
+import 'package:winter_store/features/shop/models/product_model.dart';
 import 'package:winter_store/utils/constants/colors.dart';
 import 'package:winter_store/utils/constants/enums.dart';
-import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 import 'package:winter_store/utils/helpers/helper_functions.dart';
 
 class ProductMetaData extends StatelessWidget {
-  const ProductMetaData({
-    super.key,
-  });
+  const ProductMetaData({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class ProductMetaData extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                   horizontal: TSizes.sm, vertical: TSizes.xs),
               child: Text(
-                "25%",
+                '${THelperFunctions.getPercentageOfPrice(product.price, product.salePrice!)}%',
                 style: Theme.of(context)
                     .textTheme
                     .labelLarge!
@@ -40,7 +40,7 @@ class ProductMetaData extends StatelessWidget {
               width: TSizes.spaceBtwItems,
             ),
             Text(
-              "\$250",
+              product.price.toString(),
               style: Theme.of(context)
                   .textTheme
                   .titleSmall!
@@ -50,7 +50,7 @@ class ProductMetaData extends StatelessWidget {
               width: TSizes.spaceBtwItems,
             ),
             ProductPriceText(
-              price: '175',
+              price: product.salePrice!.toString(),
               isLarge: true,
             )
           ],
@@ -60,7 +60,7 @@ class ProductMetaData extends StatelessWidget {
         ),
         // Title
         Text(
-          "Green Nike Spots Shoes",
+          product.title,
           style: Theme.of(context).textTheme.titleMedium,
         ),
         const SizedBox(
@@ -86,7 +86,7 @@ class ProductMetaData extends StatelessWidget {
         Row(
           children: [
             Image(
-              image: AssetImage(TImages.nikeLogo),
+              image: NetworkImage(product.brand!.image),
               width: 20,
               height: 20,
               color: THelperFunctions.isDarkMode(context)
@@ -97,7 +97,7 @@ class ProductMetaData extends StatelessWidget {
               width: TSizes.spaceBtwItems,
             ),
             BrandTitleWithVerifiedIcon(
-              title: "Nike",
+              title: product.brand?.name ?? "Winter",
               brandTextSize: TextSizes.large,
               iconSize: TSizes.iconSm,
             )

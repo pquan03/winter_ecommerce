@@ -57,4 +57,6 @@ class ProductController extends GetxController {
       WFullScreenLoader.stopLoading();
     }
   }
+
+
 }

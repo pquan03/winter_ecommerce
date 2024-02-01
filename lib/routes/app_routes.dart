@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:winter_store/data/dummy/dummy.dart';
 import 'package:winter_store/features/authentication/screens/login/login.dart';
 import 'package:winter_store/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:winter_store/features/authentication/screens/signup/sign_up.dart';
@@ -33,7 +34,10 @@ class AppRoutes {
     GetPage(
         name: WRoutes.productReviews, page: () => const ProductReviewsScreen()),
     GetPage(
-        name: WRoutes.productDetails, page: () => const ProductDetailScreen()),
+        name: WRoutes.productDetails,
+        page: () => ProductDetailScreen(
+              product: WDummy.listProducts[0],
+            )),
     GetPage(name: WRoutes.favorites, page: () => const FavouriteScreen()),
     GetPage(name: WRoutes.onBoarding, page: () => const OnBoardingScreen()),
   ];

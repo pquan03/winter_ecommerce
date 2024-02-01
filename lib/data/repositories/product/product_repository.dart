@@ -21,7 +21,6 @@ class ProductRepository extends GetxController {
           .where('isFeatured', isEqualTo: true)
           .get();
       final list = snapshot.docs.map((e) {
-        print(e.data());
         return ProductModel.fromSnapshot(e);
       }).toList();
       return list;
