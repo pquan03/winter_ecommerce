@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:winter_store/commons/widgets/brands/brand_card.dart';
 import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
+import 'package:winter_store/data/dummy/dummy.dart';
 import 'package:winter_store/utils/constants/colors.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 import 'package:winter_store/utils/helpers/helper_functions.dart';
@@ -22,6 +23,7 @@ class BrandShowCase extends StatelessWidget {
         children: [
           // Brands with product count
           BrandCard(
+            brand: WDummy.listBrands[0],
             showBorder: false,
           ),
 

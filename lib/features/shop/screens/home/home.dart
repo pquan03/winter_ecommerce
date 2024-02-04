@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:winter_store/commons/widgets/custom_shapes/containers/primary_header_container.dart';
@@ -6,6 +7,7 @@ import 'package:winter_store/commons/widgets/layouts/grid_layout.dart';
 import 'package:winter_store/commons/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:winter_store/commons/widgets/texts/section_heading.dart';
 import 'package:winter_store/features/shop/controllers/product_controller.dart';
+import 'package:winter_store/features/shop/screens/all_products/all_products.dart';
 import 'package:winter_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:winter_store/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:winter_store/features/shop/screens/home/widgets/promo_slider.dart';
@@ -70,6 +72,20 @@ class HomeScreen extends StatelessWidget {
                   PromoSlider(),
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
+                  ),
+                  SectionHeading(
+                    title: 'Popular Products',
+                    onButtonPressed: () => Get.to(() => AllProductsScreen(
+                          title: 'Popular Products',
+                          query: FirebaseFirestore.instance
+                              .collection('products')
+                              .where('isFeatured', isEqualTo: true)
+                              .limit(6),
+                          futureMethod: controller.fetchAllFeaturedProducts(),
+                        )),
+                  ),
+                  const SizedBox(
+                    height: TSizes.spaceBtwItems,
                   ),
                   Obx(() {
                     if (controller.isLoading.value) {

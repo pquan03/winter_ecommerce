@@ -37,6 +37,16 @@ class ProductController extends GetxController {
     }
   }
 
+  Future<List<ProductModel>> fetchAllFeaturedProducts() async {
+    try {
+      final products = await _productRepository.getFeaturedProducts();
+      return products;
+    } catch (e) {
+      WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
+      return [];
+    }
+  }
+
   // Push all data to firebase storage
   Future<void> uploadAllProducts() async {
     try {
@@ -57,6 +67,4 @@ class ProductController extends GetxController {
       WFullScreenLoader.stopLoading();
     }
   }
-
-
 }

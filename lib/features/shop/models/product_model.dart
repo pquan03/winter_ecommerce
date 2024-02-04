@@ -10,7 +10,6 @@ class ProductModel {
   String title;
   String? description;
   String? categoryId;
-  // DateTime? createdAt;
   double price;
   double? salePrice;
   String thumbnail;
@@ -28,7 +27,6 @@ class ProductModel {
     required this.title,
     this.description,
     this.categoryId,
-    // this.createdAt,
     required this.price,
     this.salePrice,
     required this.thumbnail,
@@ -60,7 +58,6 @@ class ProductModel {
         title: json['title'] ?? '',
         description: json['description'] ?? '',
         categoryId: json['categoryId'] ?? '',
-        // createdAt: json['createdAt']?.toDate(),
         price: double.parse((json['price'] ?? 0.0).toString()),
         salePrice: double.parse((json['salePrice'] ?? 0.0).toString()),
         thumbnail: json['thumbnail'] ?? '',
@@ -68,19 +65,55 @@ class ProductModel {
         brand: BrandModel.fromJson(json['Brand']),
         images: List<String>.from(json['Images']),
         productType: json['productType'] ?? '',
-        productAttributes: List<ProductAttributeModel>.from(
-          json['productAttributes']
-              .map((e) => ProductAttributeModel.fromJson(e)),
-        ),
-        productVariations: List<ProductVariationModel>.from(
-          json['productVariations']
-              .map((e) => ProductVariationModel.fromJson(e)),
-        ),
+        productAttributes: json['productAttributes'].isNotEmpty
+            ? List<ProductAttributeModel>.from(
+                json['productAttributes']
+                    .map((e) => ProductAttributeModel.fromJson(e)),
+              )
+            : [],
+        productVariations: json['productVariations'].isNotEmpty
+            ? List<ProductVariationModel>.from(
+                json['productVariations']
+                    .map((e) => ProductVariationModel.fromJson(e)),
+              )
+            : [],
       );
     } else {
       print('Document is empty');
       return ProductModel.empty();
     }
+  }
+
+  factory ProductModel.fromQuerySnapshot(
+      QueryDocumentSnapshot<Object?> documentSnapshot) {
+    final json = documentSnapshot.data() as Map<String, dynamic>;
+    return ProductModel(
+      id: documentSnapshot.id,
+      stock: int.parse((json['stock'] ?? 0).toString()),
+      sku: json['SKU'] ?? '',
+      title: json['title'] ?? '',
+      description: json['description'] ?? '',
+      categoryId: json['categoryId'] ?? '',
+      price: double.parse((json['price'] ?? 0.0).toString()),
+      salePrice: double.parse((json['salePrice'] ?? 0.0).toString()),
+      thumbnail: json['thumbnail'] ?? '',
+      isFeatured: json['isFeatured'] ?? false,
+      brand: BrandModel.fromJson(json['Brand']),
+      images: List<String>.from(json['Images']),
+      productType: json['productType'] ?? '',
+      productAttributes: json['productAttributes'].isNotEmpty
+          ? List<ProductAttributeModel>.from(
+              json['productAttributes']
+                  .map((e) => ProductAttributeModel.fromJson(e)),
+            )
+          : [],
+      productVariations: json['productVariations'].isNotEmpty
+          ? List<ProductVariationModel>.from(
+              json['productVariations']
+                  .map((e) => ProductVariationModel.fromJson(e)),
+            )
+          : [],
+    );
   }
 
   // To json
@@ -91,7 +124,6 @@ class ProductModel {
         'title': title,
         'description': description,
         'categoryId': categoryId,
-        // 'createdAt': createdAt,
         'price': price,
         'salePrice': salePrice,
         'thumbnail': thumbnail,

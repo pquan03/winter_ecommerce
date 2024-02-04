@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:winter_store/commons/widgets/appbar/appbar.dart';
 import 'package:winter_store/commons/widgets/brands/brand_card.dart';
 import 'package:winter_store/commons/widgets/layouts/grid_layout.dart';
+import 'package:winter_store/commons/widgets/shimmer/brand_shimmer.dart';
 import 'package:winter_store/commons/widgets/texts/section_heading.dart';
+import 'package:winter_store/features/shop/controllers/brand_controller.dart';
+import 'package:winter_store/features/shop/screens/brand_products/brand_products.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 
 class AllBrandsScreen extends StatelessWidget {
@@ -10,6 +14,7 @@ class AllBrandsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = BrandController.instance;
     return Scaffold(
       // App bar
       appBar: WAppBar(
@@ -30,10 +35,36 @@ class AllBrandsScreen extends StatelessWidget {
               height: TSizes.spaceBtwSections,
             ),
             // Grid Brands
-            GridLayout(
-                itemCount: 20,
-                mainAxisExtent: 80,
-                itemBuilder: (_, index) => BrandCard())
+            Obx(() {
+              if (controller.isLoading.value) {
+                return WBrandShimmer();
+              }
+
+              if (controller.allBrands.isEmpty) {
+                return Center(
+                  child: Text(
+                    "No Data Found!",
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyMedium!
+                        .apply(color: Colors.white),
+                  ),
+                );
+              }
+
+              return GridLayout(
+                  itemCount: controller.allBrands.length,
+                  mainAxisExtent: 80,
+                  itemBuilder: (_, index) {
+                    final brand = controller.allBrands[index];
+                    return BrandCard(
+                        showBorder: true,
+                        brand: brand,
+                        onTap: () => Get.to(() => BrandProductsScreen(
+                              brand: brand,
+                            )));
+                  });
+            })
           ]),
         ),
       ),

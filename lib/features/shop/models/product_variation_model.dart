@@ -30,7 +30,9 @@ class ProductVariationModel {
     if (json.isEmpty) return ProductVariationModel.empty();
     return ProductVariationModel(
       id: json['id'],
-      attributes: Map<String, String>.from(json['attributes']),
+      attributes: json['attributes'] == null
+          ? {}
+          : Map<String, String>.from(json['attributes']),
       image: json['image'] ?? '',
       price: double.parse((json['price'] ?? 0.0).toString()),
       salePrice: double.parse((json['salePrice'] ?? 0.0).toString()),

@@ -7,6 +7,8 @@ class THelperFunctions {
     /// Define your product specific colors here and it will match the attribute colors and show specific 🟠🟡🟢🔵🟣🟤
     if (value == 'Gold') {
       return Colors.amber;
+    } else if (value == 'Silver') {
+      return Colors.grey.withOpacity(0.5);
     } else if (value == 'Green') {
       return Colors.green;
     } else if (value == 'Green') {

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:winter_store/commons/widgets/appbar/appbar.dart';
 import 'package:winter_store/commons/widgets/texts/section_heading.dart';
 import 'package:winter_store/features/shop/controllers/banner_controller.dart';
+import 'package:winter_store/features/shop/controllers/brand_controller.dart';
 import 'package:winter_store/features/shop/controllers/categories_controller.dart';
 import 'package:winter_store/features/shop/controllers/product_controller.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
@@ -15,6 +17,7 @@ class UploadDataScreen extends StatelessWidget {
     final categoriesController = CategoriesController.instance;
     final bannerController = BannerController.instance;
     final productController = ProductController.instance;
+    final brandController = Get.put(BrandController());
     return Scaffold(
       appBar: WAppBar(
         showBackArrow: true,
@@ -50,7 +53,7 @@ class UploadDataScreen extends StatelessWidget {
                     Iconsax.arrow_up_1,
                     color: Theme.of(context).primaryColor,
                   ),
-                  onTap: () {},
+                  onTap: () => brandController.uploadAllBrands(),
                 ),
                 ListTile(
                   leading: Icon(
