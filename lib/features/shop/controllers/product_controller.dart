@@ -67,4 +67,26 @@ class ProductController extends GetxController {
       WFullScreenLoader.stopLoading();
     }
   }
+
+  // Push all product category relationship to firebase storage
+  Future<void> pushAllProductCategory() async {
+    try {
+      // Start loading
+      WFullScreenLoader.openLoadingDialog(
+          'Processing...', TImages.docerAnimation);
+
+      // Push all brand category relationship to firebase storage
+      await _productRepository.pushAllProductCategory();
+
+      // Show success message
+      WLoader.successSnackBar(
+          title: 'Success',
+          message: 'All brand category relationship uploaded successfully');
+    } catch (e) {
+      WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
+    } finally {
+      // Remove loading
+      WFullScreenLoader.stopLoading();
+    }
+  }
 }

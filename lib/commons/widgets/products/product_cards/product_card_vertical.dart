@@ -6,6 +6,7 @@ import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_co
 import 'package:winter_store/commons/widgets/custom_shapes/icons/circular_icon.dart';
 import 'package:winter_store/commons/widgets/images/rounded_image.dart';
 import 'package:winter_store/commons/widgets/products/cart/add_card_button.dart';
+import 'package:winter_store/commons/widgets/products/favorite_icon/favorite_icon.dart';
 import 'package:winter_store/commons/widgets/products/product_cards/brand_title_with_verified_icon.dart';
 import 'package:winter_store/commons/widgets/products/text/product_title_text.dart';
 import 'package:winter_store/commons/widgets/texts/product_price_text.dart';
@@ -70,10 +71,7 @@ class ProductCardVertical extends StatelessWidget {
                   Positioned(
                     right: 0,
                     top: 0,
-                    child: CircularIcon(
-                      icon: Iconsax.heart5,
-                      color: Colors.red,
-                    ),
+                    child: WFavoriteIcon(),
                   )
                 ],
               ),

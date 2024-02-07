@@ -62,11 +62,46 @@ class BrandController extends GetxController {
     }
   }
 
-  // Get brand specific products from API
-  Future<List<ProductModel>> getBrandProducts(String brandId) async {
+  // Push all brand category relationship to firebase storage
+  Future<void> pushAllBrandCategory() async {
     try {
-      final products = await brandRepository.getProductsForBrand(brandId: brandId);
+      // Start loading
+      WFullScreenLoader.openLoadingDialog(
+          'Processing...', TImages.docerAnimation);
+
+      // Push all brand category relationship to firebase storage
+      await brandRepository.pushAllBrandCategory();
+
+      // Show success message
+      WLoader.successSnackBar(
+          title: 'Success',
+          message: 'All brand category relationship uploaded successfully');
+    } catch (e) {
+      WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
+    } finally {
+      // Hide loading
+      WFullScreenLoader.stopLoading();
+    }
+  }
+
+  // Get brand specific products from API
+  Future<List<ProductModel>> getBrandProducts(
+      {required String brandId, int limit = -1}) async {
+    try {
+      final products = await brandRepository.getProductsForBrand(
+          brandId: brandId, limit: limit);
       return products;
+    } catch (e) {
+      WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
+      return [];
+    }
+  }
+
+  // Get brands by categoryId
+  Future<List<BrandModel>> getBrandsByCategoryId(String categoryId) async {
+    try {
+      final brands = await brandRepository.getBrandsByCategoryId(categoryId);
+      return brands;
     } catch (e) {
       WLoader.errorSnackBar(title: 'Oh snap!', message: e.toString());
       return [];

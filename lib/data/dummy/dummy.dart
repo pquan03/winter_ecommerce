@@ -1,7 +1,9 @@
 import 'package:winter_store/features/shop/models/banner_model.dart';
+import 'package:winter_store/features/shop/models/brand_category_model.dart';
 import 'package:winter_store/features/shop/models/brand_model.dart';
 import 'package:winter_store/features/shop/models/cagegory_model.dart';
 import 'package:winter_store/features/shop/models/product_attribute_model.dart';
+import 'package:winter_store/features/shop/models/product_category_model.dart';
 import 'package:winter_store/features/shop/models/product_model.dart';
 import 'package:winter_store/features/shop/models/product_variation_model.dart';
 import 'package:winter_store/routes/routes.dart';
@@ -847,6 +849,117 @@ class WDummy {
           "https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/brands%2Fnike.png?alt=media&token=3638b3fe-b53c-4b93-a667-9802a59fba9b",
       isFeatured: true,
       productsCount: 6,
+    ),
+  ];
+
+  // List Product Categories
+  static List<ProductCategoryModel> listProductCategory = [
+    // Electronics
+    ProductCategoryModel(
+      id: '1',
+      categoryId: '2',
+      productId: '1',
+    ),
+    ProductCategoryModel(
+      id: '2',
+      categoryId: '2',
+      productId: '3',
+    ),
+    ProductCategoryModel(
+      id: '3',
+      categoryId: '2',
+      productId: '4',
+    ),
+    ProductCategoryModel(
+      id: '4',
+      categoryId: '2',
+      productId: '6',
+    ),
+    ProductCategoryModel(
+      id: '5',
+      categoryId: '2',
+      productId: '7',
+    ),
+    ProductCategoryModel(
+      id: '6',
+      categoryId: '2',
+      productId: '8',
+    ),
+    // Shoes
+    ProductCategoryModel(
+      id: '7',
+      categoryId: '6',
+      productId: '2',
+    ),
+    ProductCategoryModel(
+      id: '8',
+      categoryId: '6',
+      productId: '12',
+    ),
+    // Clothes
+    ProductCategoryModel(
+      id: '9',
+      categoryId: '4',
+      productId: '8',
+    ),
+    // Furnitures
+    ProductCategoryModel(
+      id: '10',
+      categoryId: '7',
+      productId: '9',
+    ),
+    ProductCategoryModel(
+      id: '11',
+      categoryId: '7',
+      productId: '5',
+    ),
+    ProductCategoryModel(
+      id: '12',
+      categoryId: '7',
+      productId: '10',
+    ),
+  ];
+
+  // List Brand Categories
+  static List<BrandCategoryModel> listBrandCategory = [
+    // Electronics
+    BrandCategoryModel(
+      id: '1',
+      categoryId: '2',
+      brandId: '1',
+    ),
+    BrandCategoryModel(
+      id: '2',
+      categoryId: '2',
+      brandId: '2',
+    ),
+    BrandCategoryModel(
+      id: '3',
+      categoryId: '2',
+      brandId: '5',
+    ),
+    // Clothes
+    BrandCategoryModel(
+      id: '4',
+      categoryId: '4',
+      brandId: '6',
+    ),
+    // Shoes
+    BrandCategoryModel(
+      id: '5',
+      categoryId: '6',
+      brandId: '6',
+    ),
+    // Furnitures
+    BrandCategoryModel(
+      id: '6',
+      categoryId: '7',
+      brandId: '3',
+    ),
+    BrandCategoryModel(
+      id: '7',
+      categoryId: '7',
+      brandId: '4',
     ),
   ];
 }

@@ -100,6 +100,7 @@ class UploadDataScreen extends StatelessWidget {
                     Iconsax.arrow_up_1,
                     color: Theme.of(context).primaryColor,
                   ),
+                  onTap: () => brandController.pushAllBrandCategory(),
                 ),
                 ListTile(
                   leading: Icon(
@@ -111,6 +112,7 @@ class UploadDataScreen extends StatelessWidget {
                     Iconsax.arrow_up_1,
                     color: Theme.of(context).primaryColor,
                   ),
+                  onTap: () => productController.pushAllProductCategory(),
                 ),
               ],
             )

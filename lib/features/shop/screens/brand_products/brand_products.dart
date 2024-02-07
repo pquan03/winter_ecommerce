@@ -6,6 +6,7 @@ import 'package:winter_store/features/shop/controllers/brand_controller.dart';
 import 'package:winter_store/features/shop/models/brand_model.dart';
 import 'package:winter_store/features/shop/screens/all_products/widgets/sortable_product.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
+import 'package:winter_store/utils/helpers/network_help_functions.dart';
 
 class BrandProductsScreen extends StatelessWidget {
   const BrandProductsScreen({super.key, required this.brand});
@@ -32,26 +33,17 @@ class BrandProductsScreen extends StatelessWidget {
 
               SectionHeading(title: 'Products', showActionButton: false),
               const SizedBox(
-                height: TSizes.spaceBtwItems,
+                height: TSizes.spaceBtwSections,
               ),
 
               FutureBuilder(
-                  future: BrandController.instance.getBrandProducts(brand.id),
+                  future: BrandController.instance
+                      .getBrandProducts(brandId: brand.id),
                   builder: (_, snapshot) {
-                    const loader = Center(child: CircularProgressIndicator());
-                    if (snapshot.connectionState == ConnectionState.waiting) {
-                      return loader;
-                    }
+                    final widget = NetworkHelpFunctions.checkMultuRecordState(
+                        snapshot: snapshot);
 
-                    if (!snapshot.hasData ||
-                        snapshot.data == null ||
-                        snapshot.data!.isEmpty) {
-                      return Center(child: Text('No Data Found!'));
-                    }
-
-                    if (snapshot.hasError) {
-                      return Center(child: Text('No Data Found!'));
-                    }
+                    if (widget != null) return widget;
 
                     final products = snapshot.data!;
 
