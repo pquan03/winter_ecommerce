@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:winter_store/commons/styles/shadows.dart';
 import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:winter_store/commons/widgets/custom_shapes/icons/circular_icon.dart';
 import 'package:winter_store/commons/widgets/images/rounded_image.dart';
 import 'package:winter_store/commons/widgets/products/cart/add_card_button.dart';
 import 'package:winter_store/commons/widgets/products/favorite_icon/favorite_icon.dart';
@@ -71,7 +70,9 @@ class ProductCardVertical extends StatelessWidget {
                   Positioned(
                     right: 0,
                     top: 0,
-                    child: WFavoriteIcon(),
+                    child: WFavoriteIcon(
+                      productId: product.id,
+                    ),
                   )
                 ],
               ),

@@ -1,15 +1,24 @@
 import 'package:get_storage/get_storage.dart';
 
 class TLocalStorage {
-  static final TLocalStorage _instance = TLocalStorage._internal();
+  late final GetStorage _storage;
 
-  factory TLocalStorage() {
-    return _instance;
-  }
+  // Singleton Instance
+  static TLocalStorage? _instance;
 
   TLocalStorage._internal();
 
-  final _storage = GetStorage();
+  factory TLocalStorage.instance() {
+    _instance ??= TLocalStorage._internal();
+    return _instance!;
+  }
+
+  // Initialize storage
+  static Future<void> init(String bucketName) async {
+    await GetStorage.init(bucketName);
+    _instance = TLocalStorage._internal();
+    _instance!._storage = GetStorage(bucketName);
+  }
 
   // Generic method to save data
   Future<void> saveData<T>(String key, T value) async {
@@ -31,22 +40,3 @@ class TLocalStorage {
     await _storage.erase();
   }
 }
-
-
-/// *** *** *** *** *** Example *** *** *** *** *** ///
-
-// LocalStorage localStorage = LocalStorage();
-//
-// // Save data
-// localStorage.saveData('username', 'JohnDoe');
-//
-// // Read data
-// String? username = localStorage.readData<String>('username');
-// print('Username: $username'); // Output: Username: JohnDoe
-//
-// // Remove data
-// localStorage.removeData('username');
-//
-// // Clear all data
-// localStorage.clearAll();
-

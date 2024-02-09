@@ -1,4 +1,3 @@
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
@@ -13,6 +12,7 @@ import 'package:winter_store/features/authentication/screens/signup/verify_email
 import 'package:winter_store/navigation_menu.dart';
 import 'package:winter_store/utils/exceptions/firebase_auth_exceptions.dart';
 import 'package:winter_store/utils/exceptions/format_exceptions.dart';
+import 'package:winter_store/utils/local_storage/storage_utility.dart';
 
 class AuthenticationRepository extends GetxController {
   static AuthenticationRepository get instance => Get.find();
@@ -33,6 +33,8 @@ class AuthenticationRepository extends GetxController {
     final user = _auth.currentUser;
     if (user != null) {
       if (user.emailVerified) {
+        await TLocalStorage.init(user.uid);
+
         Get.offAll(() => const NavigationMenu());
       } else {
         Get.offAll(() => VerifyEmailScreen(
