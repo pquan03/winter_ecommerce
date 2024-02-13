@@ -67,6 +67,40 @@ class WDummy {
       name: "Cars",
       isFeatured: true,
     ),
+
+    // --- Sub Catetories - Sports
+    CategoryModel(
+        id: '9',
+        image:
+            'https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Categories%2Ficons8-bowling-64.png?alt=media&token=fdb25957-3315-492b-b870-be6047c9adfb',
+        name: 'Sports Shoes',
+        isFeatured: true,
+        parentID: '1'),
+
+    CategoryModel(
+        id: '10',
+        image:
+            'https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Categories%2Ficons8-bowling-64.png?alt=media&token=fdb25957-3315-492b-b870-be6047c9adfb',
+        name: 'Sports Equipments',
+        isFeatured: true,
+        parentID: '1'),
+
+    // --- Sub Catetories - Electronics
+    CategoryModel(
+        id: '11',
+        image:
+            'https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Categories%2Ficons8-smartphone-64.png?alt=media&token=16538e6d-682a-453a-9e0c-a6aeb07ec8bd',
+        name: 'Smartphones',
+        isFeatured: true,
+        parentID: '2'),
+
+    CategoryModel(
+        id: '12',
+        image:
+            'https://firebasestorage.googleapis.com/v0/b/ecommerceapp-e301c.appspot.com/o/Categories%2Ficons8-smartphone-64.png?alt=media&token=16538e6d-682a-453a-9e0c-a6aeb07ec8bd',
+        name: 'Laptops',
+        isFeatured: true,
+        parentID: '2'),
   ];
 
   // Banners

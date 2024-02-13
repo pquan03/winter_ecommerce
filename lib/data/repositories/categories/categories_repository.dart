@@ -17,7 +17,10 @@ class CategoriesRepository extends GetxController {
   // Get all categories
   Future<List<CategoryModel>> getAllCategories() async {
     try {
-      final snapshot = await _db.collection('categories').get();
+      final snapshot = await _db
+          .collection('categories')
+          .where('parentID', isEqualTo: '')
+          .get();
       final list =
           snapshot.docs.map((e) => CategoryModel.fromSnapshot(e)).toList();
       return list;
@@ -50,6 +53,25 @@ class CategoriesRepository extends GetxController {
       throw TFirebaseAuthException(e.code).message;
     } on FormatException catch (_) {
       throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } catch (_) {
+      throw 'Something went wrong. Please try again.';
+    }
+  }
+
+  //Get sub categories
+  Future<List<CategoryModel>> getSubCategories(String categoryId) async {
+    try {
+      final snapshot = await _db
+          .collection('categories')
+          .where('parentID', isEqualTo: categoryId)
+          .get();
+      final listCategories =
+          snapshot.docs.map((e) => CategoryModel.fromSnapshot(e)).toList();
+      return listCategories;
+    } on FirebaseException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
     } on PlatformException catch (e) {
       throw TFirebaseAuthException(e.code).message;
     } catch (_) {

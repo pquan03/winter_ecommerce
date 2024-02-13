@@ -32,7 +32,7 @@ class AddressesScreen extends StatelessWidget {
           padding: const EdgeInsets.all(TSizes.defaultSpace),
           child: Obx(
             () => FutureBuilder(
-              // When change key value, it will trigger refresh because wrapped with Obx
+              // When change key value, it will trigger refresh because wrap with Obx
                 key: Key(controller.isRefreshData.value.toString()),
                 future: controller.getAllUserAddress(),
                 builder: (_, snapshot) {

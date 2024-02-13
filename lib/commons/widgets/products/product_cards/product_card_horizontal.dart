@@ -7,13 +7,16 @@ import 'package:winter_store/commons/widgets/products/cart/add_card_button.dart'
 import 'package:winter_store/commons/widgets/products/product_cards/brand_title_with_verified_icon.dart';
 import 'package:winter_store/commons/widgets/products/text/product_title_text.dart';
 import 'package:winter_store/commons/widgets/texts/product_price_text.dart';
+import 'package:winter_store/features/shop/models/product_model.dart';
 import 'package:winter_store/utils/constants/colors.dart';
 import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 import 'package:winter_store/utils/helpers/helper_functions.dart';
 
 class ProductCardHorizontal extends StatelessWidget {
-  const ProductCardHorizontal({super.key});
+  const ProductCardHorizontal({super.key, required this.product});
+
+  final ProductModel product;
 
   @override
   Widget build(BuildContext context) {
@@ -99,14 +102,7 @@ class ProductCardHorizontal extends StatelessWidget {
                           ),
                         ),
                         // Button
-                        AddCardButton(
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(TSizes.cardRadiusMd),
-                            bottomRight:
-                                Radius.circular(TSizes.productImageRadius),
-                          ),
-                          icon: Iconsax.add,
-                        )
+                        AddCardButton(product: product,)
                       ],
                     ),
                   )

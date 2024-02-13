@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:winter_store/commons/styles/shadows.dart';
 import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:winter_store/commons/widgets/images/rounded_image.dart';
@@ -113,11 +112,7 @@ class ProductCardVertical extends StatelessWidget {
                 ),
                 // Button
                 AddCardButton(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(TSizes.cardRadiusMd),
-                    bottomRight: Radius.circular(TSizes.productImageRadius),
-                  ),
-                  icon: Iconsax.add,
+                  product: product,
                 )
               ],
             )

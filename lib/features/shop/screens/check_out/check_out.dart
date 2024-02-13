@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:winter_store/commons/widgets/appbar/appbar.dart';
 import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:winter_store/commons/widgets/products/cart/cart_item.dart';
+import 'package:winter_store/commons/widgets/products/cart/cart_item_info.dart';
 import 'package:winter_store/commons/widgets/products/check_out/billing_address_section.dart';
 import 'package:winter_store/commons/widgets/products/check_out/billing_amount_section.dart';
 import 'package:winter_store/commons/widgets/products/check_out/billing_payment_section.dart';
 import 'package:winter_store/commons/widgets/success_screen/success_screen.dart';
+import 'package:winter_store/features/shop/models/cart_item_model.dart';
 import 'package:winter_store/navigation_menu.dart';
 import 'package:winter_store/utils/constants/colors.dart';
 import 'package:winter_store/utils/constants/image_strings.dart';
@@ -41,11 +42,15 @@ class CheckoutScreen extends StatelessWidget {
               // List product
               Column(
                 children: [
-                  WCartItem(),
+                  WCartItemInfo(
+                    cartItem: CartItemModel.empty(),
+                  ),
                   const SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),
-                  WCartItem(),
+                  WCartItemInfo(
+                    cartItem: CartItemModel.empty(),
+                  ),
                 ],
               ),
               const SizedBox(

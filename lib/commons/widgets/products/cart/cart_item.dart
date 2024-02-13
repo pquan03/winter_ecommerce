@@ -1,60 +1,62 @@
 import 'package:flutter/material.dart';
-import 'package:winter_store/commons/widgets/images/rounded_image.dart';
-import 'package:winter_store/commons/widgets/products/product_cards/brand_title_with_verified_icon.dart';
-import 'package:winter_store/commons/widgets/products/text/product_title_text.dart';
-import 'package:winter_store/utils/constants/colors.dart';
-import 'package:winter_store/utils/constants/image_strings.dart';
+import 'package:get/get.dart';
+import 'package:winter_store/commons/widgets/products/cart/cart_item_info.dart';
+import 'package:winter_store/commons/widgets/products/product_cards/product_quantity_with_button.dart';
+import 'package:winter_store/commons/widgets/texts/product_price_text.dart';
+import 'package:winter_store/features/shop/controllers/cart_controller.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
-import 'package:winter_store/utils/helpers/helper_functions.dart';
 
-class WCartItem extends StatelessWidget {
-  const WCartItem({
+class WCartItems extends StatelessWidget {
+  const WCartItems({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        RoundedImage(
-            width: 60,
-            height: 60,
-            padding: const EdgeInsets.all(TSizes.sm),
-            backgroundColor: THelperFunctions.isDarkMode(context)
-                ? TColors.darkGrey
-                : TColors.grey,
-            imageUrl: TImages.productImage1),
-        const SizedBox(
-          width: TSizes.spaceBtwItems,
+    final controller = CartController.instance;
+    return Obx(
+      () => ListView.separated(
+        shrinkWrap: true,
+        itemCount: controller.cartItems.length,
+        separatorBuilder: (_, __) => const SizedBox(
+          height: TSizes.spaceBtwSections,
         ),
-        Expanded(
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
+        itemBuilder: (_, index) {
+          final cartItem = controller.cartItems[index];
+          return Column(
             children: [
-              BrandTitleWithVerifiedIcon(title: 'iPhone 14'),
-              ProducTitleText(
-                title: 'Appe Iphone 14 Pro max Pro Vip, Super Pro Pro max',
-                maxLines: 1,
+              WCartItemInfo(
+                cartItem: cartItem,
               ),
-              Text.rich(TextSpan(children: [
-                TextSpan(
-                    text: 'Color ',
-                    style: Theme.of(context).textTheme.bodySmall),
-                TextSpan(
-                    text: 'Purple ',
-                    style: Theme.of(context).textTheme.bodyLarge),
-                TextSpan(
-                    text: 'Size ',
-                    style: Theme.of(context).textTheme.bodySmall),
-                TextSpan(
-                    text: '256GB ',
-                    style: Theme.of(context).textTheme.bodyLarge),
-              ]))
+              const SizedBox(
+                height: TSizes.spaceBtwItems,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      // Extra space
+                      const SizedBox(
+                        width: 70,
+                      ),
+
+                      // Add, Remove Button
+                      WProductQuantityWithAddRemoveButton(
+                        quantity: cartItem.quantity,
+                        add: () => controller.addOneItemToCart(cartItem),
+                        remove: () =>
+                            controller.removeOneItemFromCart(cartItem),
+                      ),
+                    ],
+                  ),
+                  ProductPriceText(price: cartItem.price.toStringAsFixed(1))
+                ],
+              )
             ],
-          ),
-        )
-      ],
+          );
+        },
+      ),
     );
   }
 }

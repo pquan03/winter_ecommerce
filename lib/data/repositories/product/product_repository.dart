@@ -146,6 +146,7 @@ class ProductRepository extends GetxController {
     }
   }
 
+  
   Future<List<ProductModel>> getFavoriteProducts(
       List<String> productIds) async {
     try {
