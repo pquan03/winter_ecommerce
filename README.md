@@ -1,9 +1,10 @@
 # Flutter eCommerce App
 
-##Overview
+## Overview
+
 This Flutter eCommerce app is a comprehensive and feature-rich solution for building online stores with ease. It is designed with a focus on flexibility, performance, and a modern user interface.
 
-##Tech Stack
+## Tech Stack
 
 - **Flutter**: Utilizing the power of Flutter for cross-platform development, ensuring a single codebase for iOS and Android.
 
