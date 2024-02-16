@@ -42,7 +42,8 @@ class WCartItemInfo extends StatelessWidget {
                 title: cartItem.title,
                 maxLines: 1,
               ),
-              Text.rich(TextSpan(
+              Text.rich(
+                TextSpan(
                   children: (cartItem.selectedVariation ?? {})
                       .entries
                       .map((e) => TextSpan(children: [

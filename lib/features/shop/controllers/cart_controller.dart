@@ -67,6 +67,7 @@ class CartController extends GetxController {
     } else {
       cartItems.add(selectedCartItem);
     }
+    updateCart();
   }
 
   void updateCart() {
@@ -153,7 +154,7 @@ class CartController extends GetxController {
   }
 
   void clearCart() {
-    cartTotalItems.value = 0;
+    cartTotalItems.value = 1;
     cartItems.clear();
     updateCart();
   }
@@ -177,9 +178,7 @@ class CartController extends GetxController {
         image: product.thumbnail,
         quantity: quantity,
         variationId: variation.id,
-        brandName: product.brand != null ? product.brand!.name : null,
-        selectedVariation: isVariation
-            ? variationController.selectedVariation as dynamic
-            : null);
+        brandName: product.brand == null ? '' : product.brand!.name,
+        selectedVariation: isVariation ? variation.attributes : null);
   }
 }

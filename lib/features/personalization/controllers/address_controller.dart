@@ -115,6 +115,10 @@ class AddressController extends GetxController {
     }
   }
 
+  String getAddressDefaultDetail() {
+    return '${defaultAddress.value.street}, ${defaultAddress.value.city}, ${defaultAddress.value.state}, ${defaultAddress.value.country}';
+  }
+
   void resetFormFields() {
     name.clear();
     phoneNum.clear();

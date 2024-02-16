@@ -9,7 +9,10 @@ import 'package:winter_store/utils/constants/sizes.dart';
 class WCartItems extends StatelessWidget {
   const WCartItems({
     super.key,
+    this.showAddRemoveButtons = true,
   });
+
+  final bool showAddRemoveButtons;
 
   @override
   Widget build(BuildContext context) {
@@ -42,15 +45,17 @@ class WCartItems extends StatelessWidget {
                       ),
 
                       // Add, Remove Button
-                      WProductQuantityWithAddRemoveButton(
-                        quantity: cartItem.quantity,
-                        add: () => controller.addOneItemToCart(cartItem),
-                        remove: () =>
-                            controller.removeOneItemFromCart(cartItem),
-                      ),
+                      if (showAddRemoveButtons)
+                        WProductQuantityWithAddRemoveButton(
+                          quantity: cartItem.quantity,
+                          add: () => controller.addOneItemToCart(cartItem),
+                          remove: () =>
+                              controller.removeOneItemFromCart(cartItem),
+                        ),
                     ],
                   ),
-                  ProductPriceText(price: cartItem.price.toStringAsFixed(1))
+                  if (showAddRemoveButtons)
+                    ProductPriceText(price: cartItem.price.toStringAsFixed(1))
                 ],
               )
             ],

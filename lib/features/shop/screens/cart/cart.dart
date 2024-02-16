@@ -19,15 +19,22 @@ class CartScreen extends StatelessWidget {
         showBackArrow: true,
       ),
 
-      bottomNavigationBar: controller.cartItems.isEmpty
-          ? null
-          : Padding(
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: ElevatedButton(
-                  onPressed: () => Get.to(() => const CheckoutScreen()),
-                  child: Text(
-                      'Checkout: \$${controller.cartTotalPrice.value.toString()}')),
-            ),
+      bottomNavigationBar: SizedBox(
+        child: Obx(
+          () => controller.cartItems.isEmpty
+              ? const SizedBox.shrink()
+              : Padding(
+                  padding: const EdgeInsets.all(TSizes.defaultSpace),
+                  child: ElevatedButton(
+                    onPressed: () => Get.to(() => const CheckoutScreen()),
+                    child: Obx(
+                      () => Text(
+                          'Checkout: \$${controller.cartTotalPrice.value.toString()}'),
+                    ),
+                  ),
+                ),
+        ),
+      ),
       // Body
       body: Padding(
         padding: const EdgeInsets.all(TSizes.defaultSpace),

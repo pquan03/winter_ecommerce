@@ -146,7 +146,6 @@ class ProductRepository extends GetxController {
     }
   }
 
-  
   Future<List<ProductModel>> getFavoriteProducts(
       List<String> productIds) async {
     try {
@@ -156,6 +155,9 @@ class ProductRepository extends GetxController {
           .get();
       final listProducts =
           snapshot.docs.map((e) => ProductModel.fromSnapshot(e)).toList();
+      if (listProducts.isEmpty) {
+        return [];
+      }
       return listProducts;
     } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;

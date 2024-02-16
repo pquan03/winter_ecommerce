@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:winter_store/commons/widgets/appbar/appbar.dart';
 import 'package:winter_store/commons/widgets/custom_shapes/containers/rounded_container.dart';
-import 'package:winter_store/commons/widgets/products/cart/cart_item_info.dart';
+import 'package:winter_store/commons/widgets/products/cart/cart_item.dart';
 import 'package:winter_store/commons/widgets/products/check_out/billing_address_section.dart';
 import 'package:winter_store/commons/widgets/products/check_out/billing_amount_section.dart';
 import 'package:winter_store/commons/widgets/products/check_out/billing_payment_section.dart';
 import 'package:winter_store/commons/widgets/success_screen/success_screen.dart';
-import 'package:winter_store/features/shop/models/cart_item_model.dart';
+import 'package:winter_store/features/shop/controllers/cart_controller.dart';
+import 'package:winter_store/features/shop/screens/check_out/widgets/coupon_code.dart';
 import 'package:winter_store/navigation_menu.dart';
-import 'package:winter_store/utils/constants/colors.dart';
 import 'package:winter_store/utils/constants/image_strings.dart';
 import 'package:winter_store/utils/constants/sizes.dart';
 
@@ -18,6 +18,7 @@ class CheckoutScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final cartController = CartController.instance;
     return Scaffold(
       // App bar
       appBar: WAppBar(
@@ -32,7 +33,8 @@ class CheckoutScreen extends StatelessWidget {
                 title: 'Payment Success!',
                 subtitle: 'Your item will be shipped soon!',
                 onPressed: () => Get.offAll(() => const NavigationMenu()))),
-            child: Text('Checkout \$100')),
+            child: Text(
+                'Checkout \$${cartController.cartTotalPrice.toStringAsFixed(1)}')),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -40,49 +42,14 @@ class CheckoutScreen extends StatelessWidget {
           child: Column(
             children: [
               // List product
-              Column(
-                children: [
-                  WCartItemInfo(
-                    cartItem: CartItemModel.empty(),
-                  ),
-                  const SizedBox(
-                    height: TSizes.spaceBtwSections,
-                  ),
-                  WCartItemInfo(
-                    cartItem: CartItemModel.empty(),
-                  ),
-                ],
+              WCartItems(
+                showAddRemoveButtons: false,
               ),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
               // Apply Promo
-              RoundedContainer(
-                showBorder: true,
-                padding: const EdgeInsets.all(TSizes.sm),
-                child: Row(
-                  children: [
-                    Expanded(
-                      child: Text(
-                        'Have a promo code? Enter here',
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: TSizes.spaceBtwItems,
-                    ),
-                    SizedBox(
-                        width: 80,
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                side: BorderSide(
-                                    color: Colors.transparent, width: 0),
-                                backgroundColor: TColors.darkerGrey),
-                            onPressed: () {},
-                            child: const Text('Apply')))
-                  ],
-                ),
-              ),
+              CouponCode(),
               const SizedBox(
                 height: TSizes.spaceBtwSections,
               ),
@@ -98,7 +65,8 @@ class CheckoutScreen extends StatelessWidget {
                       children: [
                         WBillingAmountSection(
                           title: 'Subtotal',
-                          price: '1464.0',
+                          price:
+                              cartController.cartTotalPrice.toStringAsFixed(1),
                         ),
                         WBillingAmountSection(
                           title: 'Shipping Fee',
@@ -106,7 +74,7 @@ class CheckoutScreen extends StatelessWidget {
                         ),
                         WBillingAmountSection(
                           title: 'Tax Fee',
-                          price: '146.40',
+                          price: '10.4',
                         ),
                         const SizedBox(
                           height: TSizes.spaceBtwItems,
@@ -120,7 +88,7 @@ class CheckoutScreen extends StatelessWidget {
                               'Order total',
                               style: Theme.of(context).textTheme.titleMedium,
                             ),
-                            Text('\$2000.0',
+                            Text('\$${cartController.cartTotalPrice}',
                                 style: Theme.of(context).textTheme.titleMedium)
                           ],
                         ),
